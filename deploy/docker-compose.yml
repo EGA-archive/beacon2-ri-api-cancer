@@ -10,29 +10,6 @@ networks:
 services:
 
   ###########################################
-  # beacon-ri-tools
-  ###########################################
-
-  beacon-ri-tools:
-    image: beacon2ri/beacon_reference_implementation:v2.0.0
-    hostname: beacon-ri-tools
-    networks:
-      - beacon-priv 
-    tty: true
-
-  ###########################################
-  # training-ui
-  ###########################################
-
-  training-ui:
-    image: beacon2ri/training_ui:v0.1
-    hostname: beacon_training_ui    
-    ports:
-      - 9000:8080
-    networks:
-      - beacon-priv
-
-  ###########################################
   # MongoDB Database
   ###########################################
 
@@ -164,29 +141,5 @@ services:
     networks:
       - idp-priv 
       - my-app-network
-  
-  frontend:
-    build:
-      context: ../frontend
-    command: ["node", "/opt/yarn-v1.22.19/bin/yarn.js", "start" ]
-    container_name: react
-    depends_on:
-      - beacon
-    ports:
-      - 3000:3000
-    volumes:
-      - ../frontend:/usr/src/app
-
-  frontend2:
-    build:
-      context: ../frontend2
-    command: ["node", "/opt/yarn-v1.22.19/bin/yarn.js", "start" ]
-    container_name: react2
-    depends_on:
-      - beacon
-    ports:
-      - 3001:3001
-    volumes:
-      - ../frontend2:/usr/src/app
 
 
