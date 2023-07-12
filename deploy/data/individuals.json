@@ -1,6 +1,6 @@
 [{
       "ProvinceCode": "08",
-      "Id": "01234567890123456789",
+      "id": "01234567890123456789",
       "TumourSequenceNum": "91",
       "NumberOfTumours": "03",
       "DayOfBirth": "01",

@@ -104,44 +104,23 @@ def build_beacon_resultset_response_by_dataset(data,
     Transform data into the Beacon response format.
     """
     response_dict={}
-    LOG.debug(list_of_dataset_dicts)
-
+    #LOG.debug(list_of_dataset_dicts)
+    dataset_ids_list = []
+    
     for dataset_dict in list_of_dataset_dicts:
         dataset_id = dataset_dict['dataset']
         response_dict[dataset_id] = []
-        
-
+        dataset_ids_list.append(dataset_id)
     
-    for dataset_dict in list_of_dataset_dicts:
-        datas = dataset_dict['ids']
-        try:
-            biosample_list = datas[0]
-        except Exception:
-            biosample_list = []
-            #for datas in dataset_dict['ids']:
-        if isinstance(datas, str):
-            dict_2={}
-            dict_2['id']=datas
-            dataset_id = dataset_dict['dataset']
-            response_dict[dataset_id]=[]
-            response_dict[dataset_id].append(dict_2)
-            LOG.debug(response_dict)
-
-        else:
-            for doc in data:
-                #LOG.debug(isinstance(doc,dict))
-                #LOG.debug(doc)
-                #convert doc to dict
-                try:
-                    if doc['id'] in biosample_list['biosampleIds']:
-                        dataset_id = dataset_dict['dataset']
-                        response_dict[dataset_id].append(doc)
-                    elif doc['id'] in biosample_list['individualIds']:
-                        dataset_id = dataset_dict['dataset']
-                        response_dict[dataset_id].append(doc)
-                except Exception:
-                    pass
-
+    for doc in data:
+        LOG.debug(doc)
+        for dataset_dict in list_of_dataset_dicts:
+            try:
+                if doc['id'] in dataset_dict['ids'][0]['individualIds']:
+                    dataset_id = dataset_dict['dataset']
+                    response_dict[dataset_id].append(doc)
+            except Exception as e:
+                LOG.debug(e)
 
     
     beacon_response = {
