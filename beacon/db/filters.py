@@ -350,16 +350,10 @@ def apply_alphanumeric_filter(query: dict, filter: AlphanumericFilter, collectio
                 query_id[query_term]=filter.value
                 query['$nor'].append(query_id) 
     else:
-        query['measurementValue.quantity.value'] = { formatted_operator: float(formatted_value) }
-        if "LOINC" in filter.id:
-            query['assayCode.id']=filter.id
-        else:
-            query['assayCode.label']=filter.id
+        query = { formatted_operator: float(formatted_value) }
         LOG.debug(query)
-        dict_elemmatch={}
-        dict_elemmatch['$elemMatch']=query
         dict_measures={}
-        dict_measures['measures']=dict_elemmatch
+        dict_measures[filter.id]=query
         query = dict_measures
 
 

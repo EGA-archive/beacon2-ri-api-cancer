@@ -2,7 +2,7 @@
       "ProvinceCode": "08",
       "id": "01234567890123456789",
       "TumourSequenceNum": "91",
-      "NumberOfTumours": "03",
+      "NumberOfTumours": 3.0,
       "DayOfBirth": "01",
       "MonthOfBirth": "01",
       "YearOfBirth": "1981",

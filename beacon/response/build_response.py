@@ -99,7 +99,8 @@ def build_beacon_resultset_response_by_dataset(data,
                                     num_total_results,
                                     qparams: RequestParams,
                                     func_response_type,
-                                    entity_schema: DefaultSchemas):
+                                    entity_schema: DefaultSchemas,
+                                    start_record, finish_record):
     """"
     Transform data into the Beacon response format.
     """
@@ -121,7 +122,23 @@ def build_beacon_resultset_response_by_dataset(data,
                     response_dict[dataset_id].append(doc)
             except Exception as e:
                 LOG.debug(e)
+    length_to_rest=0
+    for dataset_id in dataset_ids_list:
+        finish_record = finish_record - length_to_rest
+        length_response = len(response_dict[dataset_id])
+        LOG.debug(length_response)
+        LOG.debug(finish_record)
+        LOG.debug(start_record)
 
+        if length_response >= finish_record:
+            response_dict[dataset_id] = response_dict[dataset_id][start_record:finish_record]
+            length_to_rest = len(response_dict[dataset_id])
+        elif length_response > start_record:
+            response_dict[dataset_id] = response_dict[dataset_id][start_record:length_response]
+            start_record = 0
+            length_to_rest = len(response_dict[dataset_id])
+        else:
+            start_record = start_record - len(response_dict[dataset_id])
     
     beacon_response = {
         'meta': build_meta(qparams, entity_schema, Granularity.RECORD),
