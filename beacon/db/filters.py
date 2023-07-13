@@ -366,7 +366,7 @@ def apply_custom_filter(query: dict, filter: CustomFilter, collection:str) -> di
     LOG.debug(query)
 
     value_splitted = filter.id.split(':')
-    query_term = value_splitted[0] + '.label'
+    query_term = value_splitted[0]
     query[query_term]=value_splitted[1]
 
 
