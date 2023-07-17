@@ -30,7 +30,7 @@ function Navbar() {
                 <NavLink exact
                     to="/"
                     className={({ isActive }) => (isActive ? 'Individuals2' : 'Individuals')}
-                ><b>Beacon v2 Cancer Portal</b></NavLink>
+                ><b>Beacon v2 Cancer Registry Portal</b></NavLink>
                 
                 <div class="animation nav2"></div>
             </nav>

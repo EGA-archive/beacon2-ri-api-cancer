@@ -694,10 +694,6 @@ function Layout(props) {
                 <button className="helpButton" onClick={handleHelpModal2}><img className="questionLogo2" src="./question.png" alt='questionIcon'></img><h5>Help for querying</h5></button>
                 
                 <div className='logos'>
-                    
-                    <a href="https://www.encr.eu/" target="_blank">
-                        <img className="cinecaLogo" src="./logo_ENCR.png" alt='ENCRLogo'></img>
-                    </a>
                     <a href="https://ega-archive.org/" target="_blank">
                         <img className="cinecaLogo" src="./logo.png" alt='EGALogo'></img>
                     </a>

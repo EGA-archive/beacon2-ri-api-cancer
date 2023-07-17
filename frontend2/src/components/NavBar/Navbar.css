@@ -146,7 +146,7 @@
 }
 
 .Individuals:hover~.animation {
-	width: 220px !important;
+	width: 290px !important;
 	left: 0px !important;
 	background-color: #1abc9c !important;
 }
