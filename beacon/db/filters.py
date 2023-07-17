@@ -277,7 +277,11 @@ def format_operator(operator: Operator) -> str:
 
 def apply_alphanumeric_filter(query: dict, filter: AlphanumericFilter, collection: str) -> dict:
     LOG.debug(filter.value)
-    formatted_value = format_value(filter.value)
+    alphanumeric_fields=['ProvinceCode', 'id', 'TopographyLocation', 'CauseOfDeath', 'CauseOfDeathCode', 'TTNM', 'NTNM', 'MTNM', 'TNMStage']
+    if filter.id in alphanumeric_fields:
+        formatted_value = str(filter.value)
+    else:
+        formatted_value = format_value(filter.value)
     formatted_operator = format_operator(filter.operator)
     if isinstance(formatted_value,str):
         if formatted_operator == "$eq":
@@ -326,6 +330,20 @@ def apply_alphanumeric_filter(query: dict, filter: AlphanumericFilter, collectio
                 query_id={}
                 query_id[query_term]=regex_dict
                 query['$nor'].append(query_id)
+            else:
+                try: 
+                    if query['$nor']:
+                        pass
+                    else:
+                        query['$nor']=[]
+                except Exception:
+                    query['$nor']=[]
+
+                query_term = filter.id
+                query_id={}
+                query_id[query_term]=filter.value
+                query['$nor'].append(query_id) 
+
 
         else:
             query = { formatted_operator: formatted_value }
@@ -339,7 +357,6 @@ def apply_alphanumeric_filter(query: dict, filter: AlphanumericFilter, collectio
         dict_measures={}
         dict_measures[filter.id]=query
         query = dict_measures
-
 
     LOG.debug("QUERY: %s", query)
     return query

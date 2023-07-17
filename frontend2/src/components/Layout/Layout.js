@@ -817,7 +817,7 @@ function Layout(props) {
                                                     <option value="<" >&lt;</option>
                                                     <option value=">" >&gt;</option>
                                                     <option value="!" >!</option>
-                                                    <option value="%" >%</option>
+                                                    <option value="=%" >%</option>
                                                 </select>
 
                                             </div>
