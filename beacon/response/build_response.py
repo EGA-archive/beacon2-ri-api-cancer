@@ -49,7 +49,6 @@ def build_response_by_dataset(data, response_dict, num_total_results, qparams, f
             'resultsCount': len(v),
             'results': v,
             # 'info': None,
-            'resultsHandover': None,  # build_results_handover
         }
         list_of_responses.append(response)
 
@@ -65,7 +64,6 @@ def build_response(data, num_total_results, qparams, func):
         'resultsCount': num_total_results,
         'results': data,
         # 'info': None,
-        'resultsHandover': None,  # build_results_handover
     }
 
     return response
@@ -89,8 +87,7 @@ def build_beacon_resultset_response(data,
         # TODO: 'extendedInfo': build_extended_info(),
         'response': {
             'resultSets': [build_response(data, num_total_results, qparams, func_response_type)]
-        },
-        'beaconHandovers': conf.beacon_handovers,
+        }
     }
     return beacon_response
 
@@ -146,8 +143,7 @@ def build_beacon_resultset_response_by_dataset(data,
         # TODO: 'extendedInfo': build_extended_info(),
         'response': {
             'resultSets': build_response_by_dataset(data, response_dict, num_total_results, qparams, func_response_type)
-        },
-        'beaconHandovers': conf.beacon_handovers,
+        }
     }
     return beacon_response
 
@@ -166,9 +162,7 @@ def build_beacon_count_response(data,
 
     beacon_response = {
         'meta': build_meta(qparams, entity_schema, Granularity.COUNT),
-        'responseSummary': build_response_summary(num_total_results > 0, num_total_results),
-        # TODO: 'extendedInfo': build_extended_info(),
-        'beaconHandovers': conf.beacon_handovers,
+        'responseSummary': build_response_summary(num_total_results > 0, num_total_results)
     }
     return beacon_response
 
@@ -187,9 +181,7 @@ def build_beacon_boolean_response(data,
 
     beacon_response = {
         'meta': build_meta(qparams, entity_schema, Granularity.BOOLEAN),
-        'responseSummary': build_response_summary(num_total_results > 0, None),
-        # TODO: 'extendedInfo': build_extended_info(),
-        'beaconHandovers': conf.beacon_handovers,
+        'responseSummary': build_response_summary(num_total_results > 0, None)
     }
     return beacon_response
 
@@ -201,8 +193,6 @@ def build_beacon_collection_response(data, num_total_results, qparams: RequestPa
     beacon_response = {
         'meta': build_meta(qparams, entity_schema, Granularity.RECORD),
         'responseSummary': build_response_summary(num_total_results > 0, num_total_results),
-        # TODO: 'info': build_extended_info(),
-        'beaconHandovers': conf.beacon_handovers,
         'response': {
             'collections': func_response_type(data, qparams)
         }
@@ -292,7 +282,6 @@ def build_filtering_terms_response(data,
         # TODO: 'extendedInfo': build_extended_info(),
         'response': {
             'filteringTerms': data,
-        },
-        'beaconHandovers': conf.beacon_handovers,
+        }
     }
     return beacon_response
