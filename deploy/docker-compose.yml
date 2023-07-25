@@ -17,7 +17,7 @@ services:
     image: mongo:5
     hostname: mongo
     ports:
-      - 27017:27017
+      - 27018:27017
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
@@ -28,11 +28,12 @@ services:
       - beacon-priv
       - my-app-network
 
+
   mongo-express:
     image: mongo-express
     restart: always
     ports:
-      - 8081:8081
+      - 8082:8081
     environment:
       ME_CONFIG_MONGODB_ADMINUSERNAME: root
       ME_CONFIG_MONGODB_ADMINPASSWORD: example
@@ -57,7 +58,7 @@ services:
       - ./logger.yml:/beacon/beacon/logger.yml
       - ./ontologies:/beacon/ontologies
     ports:
-      - "5050:5050"
+      - "5052:5050"
     networks:
       - beacon-priv
       - pub
@@ -79,7 +80,7 @@ services:
       - ../permissions/:/beacon/permissions/  # inject the code, so we see the modifications "live"
       - ./logger.yml:/beacon/logger.yml
     ports:
-      - "5051:5051"
+      - "5053:5051"
     networks:
       - beacon-priv
       - pub
@@ -122,7 +123,7 @@ services:
     volumes:
       - ./beacon-realm.json:/tmp/beacon-realm.json
     ports:
-      - "8080:8080"
+      - "8085:8080"
       - "9991:8443"
     networks:
       - pub
@@ -142,6 +143,8 @@ services:
       - idp-priv 
       - my-app-network
 
+
+
   frontend2:
     build:
       context: ../frontend2
@@ -150,7 +153,7 @@ services:
     depends_on:
       - beacon
     ports:
-      - 3001:3001
+      - 3003:3001
     volumes:
       - ../frontend2:/usr/src/app
 
