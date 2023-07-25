@@ -94,7 +94,7 @@ services:
     build:
       context: ../frontend-cancer
     command: ["node", "/opt/yarn-v1.22.19/bin/yarn.js", "start"]
-    container_name: react2
+    container_name: react-cancer
     depends_on:
       - beacon-cancer
     ports:
