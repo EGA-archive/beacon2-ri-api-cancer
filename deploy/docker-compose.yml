@@ -96,7 +96,7 @@ services:
     command: ["node", "/opt/yarn-v1.22.19/bin/yarn.js", "start"]
     container_name: react2
     depends_on:
-      - beacon
+      - beacon-cancer
     ports:
       - 3003:3001
     volumes:
