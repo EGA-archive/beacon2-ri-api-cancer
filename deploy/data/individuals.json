@@ -1,17 +1,20 @@
 [{
-      "ProvinceCode": "08",
       "id": "01234567890123456789",
-      "TumourSequenceNum": 24,
-      "NumberOfTumours": 2,
+      "Age": 44,
       "DayOfBirth": 2,
       "MonthOfBirth": 2,
       "YearOfBirth": 1982,
       "SexAtBirth": 2,
+      "ProvinceCode": "08",
+      "TumourSequenceNum": 24,
+      "NumberOfTumours": 2,
+
+
       "DayOfDiagnosis": 2,
       "MonthOfDiagnosis": 2,
       "YearOfDiagnosis": 2022,
       "RegistryYear": 2022,
-      "Age": 44,
+
       "TopographyLocation": "C15",
       "TopographySublocation": 3,
       "Morphology": 8170,
