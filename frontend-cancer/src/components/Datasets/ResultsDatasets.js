@@ -15,7 +15,7 @@ function ResultsDatasets(props) {
         const apiCall = async () => {
 
             try {
-                let res = await axios.get('http://localhost:5050/api/info')
+                let res = await axios.get('http://localhost:5052/api/info')
                 console.log(res.data.responses)
                 res.data.responses.forEach(element => {
                     resp.push(element)

@@ -43,7 +43,7 @@ export default function SignInForm() {
             var details = {
                 'grant_type': 'password',
                 'client_id': 'beacon',
-                'client_secret': 'WGahOcaJcbQ2srhBsNH56NhhDxH5M51f',
+                'client_secret': 'epZGatngjVC4Uc8Ej2b0h7k4qJTLoYDB',
                 'username': userName,
                 'password': password,
                 'realm': 'Beacon',

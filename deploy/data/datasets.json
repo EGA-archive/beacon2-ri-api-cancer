@@ -29,7 +29,7 @@
      "externalUrl" : "https://ega-archive.org/",
      "id" : "Cancer_test_dataset",
      "ids" : {
-         "IndividualIds": [
+         "individualIds": [
                "93389",
                "97572",
                "261486",

@@ -7,46 +7,60 @@ function TableResultsIndividuals(props) {
 
     const columns = [
         { field: 'id', headerName: 'Row', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'IndividualId', headerName: 'Individual ID', width: 200, headerClassName: 'super-app-theme--header' },
-        { field: 'age', headerName: 'Age', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'behaviour', headerName: 'Behaviour', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'causeofdeath', headerName: 'Cause of death', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'causeofdeathcode', headerName: 'Cause od death code', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'dayofbirth', headerName: 'Day of birth', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'dayofdeath', headerName: 'Day of death', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'dayofdiagnosis', headerName: 'Day of diagnosis', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'diagnosisbasis', headerName: 'Diagnosis basis', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'endmonitoringday', headerName: 'End monitoring day', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'endmonitoringmonth', headerName: 'End monitoring month', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'endmonitoringyear', headerName: 'End monitoring year', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'grade', headerName: 'Grade', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'iarcflag', headerName: 'IARC flag', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'icdedition', headerName: 'ICD edition', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'mtnm', headerName: 'MTNM', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'monthofbirth', headerName: 'Month of birth', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'monthofdeath', headerName: 'Month of death', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'monthofdiagnosis', headerName: 'Month of diagnosis', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'morphology', headerName: 'Morphology', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'ntnm', headerName: 'NTNM', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'numberoftumours', headerName: 'Number of tumours', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'provincecode', headerName: 'Province code', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'registryyear', headerName: 'Registry year', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'sexatbirth', headerName: 'Sex at birth', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'tnmedition', headerName: 'TNM edition', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'tnmstage', headerName: 'TNM stage', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'ttnm', headerName: 'TTNM', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'topographylocation', headerName: 'Topography location', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'topographysublocation', headerName: 'Topography sublocation', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'tumoursequencenum', headerName: 'Tumour sequence number', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'vitalstatus', headerName: 'Vital status', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'yearofbirth', headerName: 'Year of birth', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'yearofdeath', headerName: 'Year of death', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'yearofdiagnosis', headerName: 'Year of diagnosis', width: 100, headerClassName: 'super-app-theme--header' }
-        //   { field: 'pedigrees', headerName: 'pedigrees', width: 150 },
-        // { field: 'treatments', headerName: 'treatments', width: 150 },
-        //{ field: 'interventionsOrProcedures', headerName: 'interventionsOrProcedures', width: 150 },
-        // { field: 'exposures', headerName: 'exposures', width: 150 },
-        // { field: 'karyotypicSex', headerName: 'karyotypicSex', width: 150 },
+        { field: 'PatientID', headerName: 'PatientID', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'AgeOfOnset', headerName: 'AgeOfOnset', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'DateOfBirth_DayOfBirth', headerName: 'DateOfBirth_DayOfBirth', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'DateOfBirth_MonthOfBirth', headerName: 'DateOfBirth_MonthOfBirth', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'DateOfBirth_YearOfBirth', headerName: 'DateOfBirth_YearOfBirth', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'Sex', headerName: 'Sex', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourIdentificationCode', headerName: 'TumourIdentificationCode', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'GeographicResidence', headerName: 'GeographicResidence', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'HospitalOfDiagnosis', headerName: 'HospitalOfDiagnosis', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'IncidenceDate_IncidenceDay', headerName: 'IncidenceDate_IncidenceDay', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'IncidenceDate_IncidenceMonth', headerName: 'IncidenceDate_IncidenceMonth', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'IncidenceDate_IncidenceYear', headerName: 'IncidenceDate_IncidenceYear', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'BasisOfDiagnosis', headerName: 'BasisOfDiagnosis', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourTopography', headerName: 'TumourTopography', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourMorphology', headerName: 'TumourMorphology', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourBehaviour', headerName: 'TumourBehaviour', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourGrade', headerName: 'TumourGrade', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourLaterality', headerName: 'TumourLaterality', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'PrognosticTumourFactors', headerName: 'PrognosticTumourFactors', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourStage_TnmFinding_Clinical_T_category', headerName: 'TumourStage_TnmFinding_Clinical_T_category', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourStage_TnmFinding_Clinical_N_category', headerName: 'TumourStage_TnmFinding_Clinical_N_category', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourStage_TnmFinding_Pathological_M_category', headerName: 'TumourStage_TnmFinding_Pathological_M_category', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourStage_TnmFinding_Pathological_T_category', headerName: 'TumourStage_TnmFinding_Pathological_T_category', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourStage_TnmFinding_Pathological_N_category', headerName: 'TumourStage_TnmFinding_Pathological_N_category', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourStage_TnmFinding_Pathological_M_category', headerName: 'TumourStage_TnmFinding_Pathological_M_category', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourStage_TnmFinding_TnmEdition', headerName: 'AgeTumourStage_TnmFinding_TnmEditionOfOnset', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourStage_TorontoChildhoodCancerStage_Tier1', headerName: 'TumourStage_TorontoChildhoodCancerStage_Tier1', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourStage_TorontoChildhoodCancerStage_Tier2', headerName: 'TumourStage_TorontoChildhoodCancerStage_Tier2', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourStage_EssentialTnmStage', headerName: 'TumourStage_EssentialTnmStage', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourStage_AnnArborStagingSystem', headerName: 'TumourStage_AnnArborStagingSystem', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourStage_LuganoStagingSystem', headerName: 'TumourStage_LuganoStagingSystem', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourStage_DukesStage', headerName: 'TumourStage_DukesStage', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourStage_SummaryExtentOfDisease', headerName: 'TumourStage_SummaryExtentOfDisease', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourStage_FigoStage', headerName: 'TumourStage_FigoStage', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'PrimaryTreatment_Surgery', headerName: 'PrimaryTreatment_Surgery', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'PrimaryTreatment_Chemotherapy', headerName: 'PrimaryTreatment_Chemotherapy', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'PrimaryTreatment_HormoneTherapy', headerName: 'PrimaryTreatment_HormoneTherapy', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'PrimaryTreatment_Immunotherapy', headerName: 'PrimaryTreatment_Immunotherapy', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'PrimaryTreatment_Other', headerName: 'PrimaryTreatment_Other', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'PrimaryTreatment_Radiotherapy', headerName: 'PrimaryTreatment_Radiotherapy', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'PrimaryTreatment_StemCellTransplantation', headerName: 'PrimaryTreatment_StemCellTransplantation', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'PrimaryTreatment_TargetedTherapy', headerName: 'PrimaryTreatment_TargetedTherapy', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'HospitalOfTreatment', headerName: 'HospitalOfTreatment', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'DateOfRecurrence_DayOfRecurrence', headerName: 'DateOfRecurrence_DayOfRecurrence', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'DateOfRecurrence_MonthOfRecurrence', headerName: 'DateOfRecurrence_MonthOfRecurrence', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'DateOfRecurrence_YearOfRecurrence', headerName: 'DateOfRecurrence_YearOfRecurrence', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'SiteOfRecurrence', headerName: 'AgeOfOnset', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'VitalStatus', headerName: 'PrimaryTreatment_Radiotherapy', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'VitalStatusDate_DayVitalStatus', headerName: 'PrimaryTreatment_StemCellTransplantation', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'VitalStatusDate_MonthVitalStatus', headerName: 'PrimaryTreatment_TargetedTherapy', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'VitalStatusDate_YearVitalStatus', headerName: 'HospitalOfTreatment', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'SurvivalDuration', headerName: 'DateOfRecurrence_DayOfRecurrence', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'CauseOfDeath', headerName: 'DateOfRecurrence_MonthOfRecurrence', width: 100, headerClassName: 'super-app-theme--header' },
+        { field: 'CauseOfDeath_ICDedition', headerName: 'DateOfRecurrence_YearOfRecurrence', width: 100, headerClassName: 'super-app-theme--header' }
     ]
     console.log(props.results)
     const rows = []
@@ -56,448 +70,783 @@ function TableResultsIndividuals(props) {
             
         if (element[1] !== undefined) {
             console.log(element[0])
-            let Age = ''
-            let stringAge = ''
+            let PatientID = ''
+            let stringPatientID = ''
 
-            if (element[1].Age !== '' && element[1].Age !== undefined) {
-                if (element[1].Age !== undefined) {
-                    Age = element[1].Age
+            if (element[1].PatientID !== '' && element[1].PatientID !== undefined) {
+                if (element[1].PatientID !== undefined) {
+                    PatientID = element[1].PatientID
                 }
-                stringAge = `${Age}`
+                stringPatientID = `${PatientID}`
             } else {
-                stringAge = ''
+                stringPatientID = ''
             }
 
-            let Behaviour = ''
-            let stringBeh = ''
+            let AgeOfOnset = ''
+            let stringAgeOfOnset = ''
 
-            if (element[1].Behaviour !== '' && element[1].Behaviour !== undefined) {
-                if (element[1].Behaviour !== undefined) {
-                    Behaviour = element[1].Behaviour
+            if (element[1].AgeOfOnset !== '' && element[1].AgeOfOnset !== undefined) {
+                if (element[1].AgeOfOnset !== undefined) {
+                    AgeOfOnset = element[1].AgeOfOnset
                 }
 
-                stringBeh = `${Behaviour}`
+                stringAgeOfOnset = `${AgeOfOnset}`
             } else {
-                stringBeh = ''
+                stringAgeOfOnset = ''
             }
  
-            let CauseOfDeath = ''
-            let stringCOD = ''
+            let DateOfBirth_DayOfBirth = ''
+            let stringDateOfBirth_DayOfBirth = ''
 
-            if (element[1].CauseOfDeath !== '' && element[1].CauseOfDeath !== undefined) {
-                if (element[1].CauseOfDeath !== undefined) {
-                    CauseOfDeath = element[1].CauseOfDeath
+            if (element[1].DateOfBirth.DayOfBirth !== '' && element[1].DateOfBirth.DayOfBirth !== undefined) {
+                if (element[1].DateOfBirth.DayOfBirth !== undefined) {
+                    DateOfBirth_DayOfBirth = element[1].DateOfBirth.DayOfBirth
                 }
 
-                stringCOD = `${CauseOfDeath}`
+                stringDateOfBirth_DayOfBirth = `${DateOfBirth_DayOfBirth}`
             } else {
-                stringCOD = ''
+                stringDateOfBirth_DayOfBirth = ''
             }
 
-            let CauseOfDeathCode = ''
-            let stringCODe = ''
+            let DateOfBirth_MonthOfBirth = ''
+            let stringDateOfBirth_MonthOfBirth = ''
 
-            if (element[1].CauseOfDeathCode !== '' && element[1].CauseOfDeathCode !== undefined) {
-                if (element[1].CauseOfDeathCode !== undefined) {
-                    CauseOfDeathCode = element[1].CauseOfDeathCode
+            if (element[1].DateOfBirth.MonthOfBirth !== '' && element[1].DateOfBirth.MonthOfBirth !== undefined) {
+                if (element[1].DateOfBirth.MonthOfBirth !== undefined) {
+                    DateOfBirth_MonthOfBirth = element[1].DateOfBirth.MonthOfBirth
                 }
 
-                stringCODe = `${CauseOfDeathCode}`
+                stringDateOfBirth_MonthOfBirth = `${DateOfBirth_MonthOfBirth}`
             } else {
-                stringCODe = ''
+                stringDateOfBirth_MonthOfBirth = ''
             }
 
-            let DayOfBirth = ''
-            let stringDOB = ''
+            let DateOfBirth_YearOfBirth = ''
+            let stringDateOfBirth_YearOfBirth = ''
 
-            if (element[1].DayOfBirth !== '' && element[1].DayOfBirth !== undefined) {
-                if (element[1].DayOfBirth !== undefined) {
-                    DayOfBirth = element[1].DayOfBirth
+            if (element[1].DateOfBirth.YearOfBirth !== '' && element[1].DateOfBirth.YearOfBirth !== undefined) {
+                if (element[1].DateOfBirth.YearOfBirth !== undefined) {
+                    DateOfBirth_YearOfBirth = element[1].DateOfBirth.YearOfBirth
                 }
 
-                stringDOB = `${DayOfBirth}`
+                stringDateOfBirth_YearOfBirth = `${DateOfBirth_YearOfBirth}`
             } else {
-                stringDOB = ''
+                stringDateOfBirth_YearOfBirth = ''}
+
+
+            let Sex = ''
+            let stringSex = ''
+
+            if (element[1].Sex !== '' && element[1].Sex !== undefined) {
+                if (element[1].Sex !== undefined) {
+                    Sex = element[1].Sex
+                }
+
+                stringSex = `${Sex}`
+            } else {
+                stringSex = ''
             }
 
-            let DayOfDeath = ''
-            let stringDOD = ''
+            let TumourIdentificationCode = ''
+            let stringTumourIdentificationCode = ''
 
-            if (element[1].DayOfDeath !== '' && element[1].DayOfDeath !== undefined) {
-                if (element[1].DayOfDeath !== undefined) {
-                    DayOfDeath = element[1].DayOfDeath
+            if (element[1].TumourIdentificationCode !== '' && element[1].TumourIdentificationCode !== undefined) {
+                if (element[1].TumourIdentificationCode !== undefined) {
+                    TumourIdentificationCode = element[1].TumourIdentificationCode
                 }
 
-                stringDOD = `${DayOfDeath}`
+                stringTumourIdentificationCode = `${TumourIdentificationCode}`
             } else {
-                stringDOD = ''
+                stringTumourIdentificationCode = ''
             }
 
-            let DayOfDiagnosis = ''
-            let stringDODi = ''
+            let GeographicResidence = ''
+            let stringGeographicResidence = ''
 
-            if (element[1].DayOfDiagnosis !== '' && element[1].DayOfDiagnosis !== undefined) {
-                if (element[1].DayOfDiagnosis !== undefined) {
-                    DayOfDiagnosis= element[1].DayOfDiagnosis
+            if (element[1].GeographicResidence !== '' && element[1].GeographicResidence !== undefined) {
+                if (element[1].GeographicResidence !== undefined) {
+                    GeographicResidence = element[1].GeographicResidence
                 }
 
-                stringDODi = `${DayOfDiagnosis}`
+                stringGeographicResidence = `${GeographicResidence}`
             } else {
-                stringDODi = ''
+                stringGeographicResidence = ''
             }
 
-            let DiagnosisBasis = ''
-            let stringDiBasis = ''
+            let HospitalOfDiagnosis = ''
+            let stringHospitalOfDiagnosis = ''
 
-            if (element[1].DiagnosisBasis !== '' && element[1].DiagnosisBasis !== undefined) {
-                if (element[1].DiagnosisBasis !== undefined) {
-                    DiagnosisBasis= element[1].DiagnosisBasis
+            if (element[1].HospitalOfDiagnosis !== '' && element[1].HospitalOfDiagnosis !== undefined) {
+                if (element[1].HospitalOfDiagnosis !== undefined) {
+                    HospitalOfDiagnosis= element[1].HospitalOfDiagnosis
                 }
 
-                stringDiBasis = `${DiagnosisBasis}`
+                stringHospitalOfDiagnosis = `${HospitalOfDiagnosis}`
             } else {
-                stringDiBasis = ''
+                stringHospitalOfDiagnosis = ''
             }
 
-            let EndMonitoringDay = ''
-            let stringEMD = ''
+            let IncidenceDate_IncidenceDay = ''
+            let stringIncidenceDate_IncidenceDay = ''
 
-            if (element[1].EndMonitoringDay !== '' && element[1].EndMonitoringDay !== undefined) {
-                if (element[1].EndMonitoringDay !== undefined) {
-                    EndMonitoringDay= element[1].EndMonitoringDay
+            if (element[1].IncidenceDate.IncidenceDay !== '' && element[1].IncidenceDate.IncidenceDay !== undefined) {
+                if (element[1].IncidenceDate.IncidenceDay !== undefined) {
+                    IncidenceDate_IncidenceDay= element[1].IncidenceDate.IncidenceDay
                 }
 
-                stringEMD = `${EndMonitoringDay}`
+                stringIncidenceDate_IncidenceDay = `${IncidenceDate_IncidenceDay}`
             } else {
-                stringEMD = ''
+                stringIncidenceDate_IncidenceDay = ''
             }
 
-            let EndMonitoringMonth= ''
-            let stringEMM = ''
+            let IncidenceDate_IncidenceMonth = ''
+            let stringIncidenceDate_IncidenceMonth = ''
 
-            if (element[1].EndMonitoringMonth !== '' && element[1].EndMonitoringMonth !== undefined) {
-                if (element[1].EndMonitoringMonth !== undefined) {
-                    EndMonitoringMonth= element[1].EndMonitoringMonth
+            if (element[1].IncidenceDate.IncidenceMonth !== '' && element[1].IncidenceDate.IncidenceMonth !== undefined) {
+                if (element[1].IncidenceDate.IncidenceMonth !== undefined) {
+                    IncidenceDate_IncidenceMonth= element[1].IncidenceDate.IncidenceMonth
                 }
 
-                stringEMM = `${EndMonitoringMonth}`
+                stringIncidenceDate_IncidenceMonth = `${IncidenceDate_IncidenceMonth}`
             } else {
-                stringEMM = ''
+                stringIncidenceDate_IncidenceMonth = ''
             }
 
-            let EndMonitoringYear= ''
-            let stringEMY = ''
+            let IncidenceDate_IncidenceYear = ''
+            let stringIncidenceDate_IncidenceYear = ''
 
-            if (element[1].EndMonitoringYear !== '' && element[1].EndMonitoringYear !== undefined) {
-                if (element[1].EndMonitoringYear !== undefined) {
-                    EndMonitoringYear= element[1].EndMonitoringYear
+            if (element[1].IncidenceDate.IncidenceYear !== '' && element[1].IncidenceDate.IncidenceYear !== undefined) {
+                if (element[1].IncidenceDate.IncidenceYear !== undefined) {
+                    IncidenceDate_IncidenceYear= element[1].IncidenceDate.IncidenceYear
                 }
 
-                stringEMY = `${EndMonitoringYear}`
+                stringIncidenceDate_IncidenceYear = `${IncidenceDate_IncidenceYear}`
             } else {
-                stringEMY = ''
+                stringIncidenceDate_IncidenceYear = ''
             }
 
-            let Grade= ''
-            let stringGrade = ''
+            let BasisOfDiagnosis = ''
+            let stringBasisOfDiagnosis = ''
 
-            if (element[1].Grade !== '' && element[1].Grade !== undefined) {
-                if (element[1].Grade !== undefined) {
-                    Grade= element[1].Grade
+            if (element[1].BasisOfDiagnosis !== '' && element[1].BasisOfDiagnosis !== undefined) {
+                if (element[1].BasisOfDiagnosis !== undefined) {
+                    BasisOfDiagnosis= element[1].BasisOfDiagnosis
                 }
 
-                stringGrade = `${Grade}`
+                stringBasisOfDiagnosis = `${BasisOfDiagnosis}`
             } else {
-                stringGrade = ''
+                stringBasisOfDiagnosis = ''
             }
 
-            let IARCflag= ''
-            let stringIARC = ''
+            let TumourTopography= ''
+            let stringTumourTopography = ''
 
-            if (element[1].IARCflag !== '' && element[1].IARCflag !== undefined) {
-                if (element[1].IARCflag !== undefined) {
-                    IARCflag= element[1].IARCflag
+            if (element[1].TumourTopography !== '' && element[1].TumourTopography !== undefined) {
+                if (element[1].TumourTopography !== undefined) {
+                    TumourTopography= element[1].TumourTopography
                 }
 
-                stringIARC = `${IARCflag}`
+                stringTumourTopography = `${TumourTopography}`
             } else {
-                stringIARC = ''
+                stringTumourTopography = ''
             }
 
-            let ICDEdition= ''
-            let stringICDE = ''
+            let TumourMorphology= ''
+            let stringTumourMorphology = ''
 
-            if (element[1].ICDEdition !== '' && element[1].ICDEdition !== undefined) {
-                if (element[1].ICDEdition !== undefined) {
-                    ICDEdition= element[1].ICDEdition
+            if (element[1].TumourMorphology !== '' && element[1].TumourMorphology !== undefined) {
+                if (element[1].TumourMorphology !== undefined) {
+                    TumourMorphology= element[1].TumourMorphology
                 }
 
-                stringICDE = `${ICDEdition}`
+                stringTumourMorphology = `${TumourMorphology}`
             } else {
-                stringICDE = ''
+                stringTumourMorphology = ''
             }
 
-            let MTNM= ''
-            let stringMTNM = ''
+            let TumourBehaviour= ''
+            let stringTumourBehaviour = ''
 
-            if (element[1].MTNM !== '' && element[1].MTNM !== undefined) {
-                if (element[1].MTNM !== undefined) {
-                    MTNM= element[1].MTNM
+            if (element[1].TumourBehaviour !== '' && element[1].TumourBehaviour !== undefined) {
+                if (element[1].TumourBehaviour !== undefined) {
+                    TumourBehaviour= element[1].TumourBehaviour
                 }
 
-                stringMTNM = `${MTNM}`
+                stringTumourBehaviour = `${TumourBehaviour}`
             } else {
-                stringMTNM = ''
+                stringTumourBehaviour = ''
             }
 
-            let NTNM= ''
-            let stringNTNM = ''
+            let TumourGrade= ''
+            let stringTumourGrade = ''
 
-            if (element[1].NTNM !== '' && element[1].NTNM !== undefined) {
-                if (element[1].NTNM !== undefined) {
-                    NTNM= element[1].NTNM
+            if (element[1].TumourGrade !== '' && element[1].TumourGrade !== undefined) {
+                if (element[1].TumourGrade !== undefined) {
+                    TumourGrade= element[1].TumourGrade
                 }
 
-                stringNTNM = `${NTNM}`
+                stringTumourGrade = `${TumourGrade}`
             } else {
-                stringNTNM = ''
+                stringTumourGrade = ''
             }
 
-            let TTNM= ''
-            let stringTTNM = ''
+            let TumourLaterality= ''
+            let stringTumourLaterality = ''
 
-            if (element[1].TTNM !== '' && element[1].TTNM !== undefined) {
-                if (element[1].TTNM !== undefined) {
-                    NTNM= element[1].TTNM
+            if (element[1].TumourLaterality !== '' && element[1].TumourLaterality !== undefined) {
+                if (element[1].TumourLaterality !== undefined) {
+                    TumourLaterality= element[1].TumourLaterality
                 }
 
-                stringTTNM = `${TTNM}`
+                stringTumourLaterality = `${TumourLaterality}`
             } else {
-                stringTTNM = ''
+                stringTumourLaterality = ''
             }
 
-            let MonthOfBirth= ''
-            let stringMOB = ''
+            let TumourStage_TnmFinding_TnmEdition= ''
+            let stringTumourStage_TnmFinding_TnmEdition = ''
 
-            if (element[1].MonthOfBirth !== '' && element[1].MonthOfBirth !== undefined) {
-                if (element[1].MonthOfBirth !== undefined) {
-                    MonthOfBirth= element[1].MonthOfBirth
+            if (element[1].TumourStage.TnmFinding.TnmEdition !== '' && element[1].TumourStage.TnmFinding.TnmEdition !== undefined) {
+                if (element[1].TumourStage.TnmFinding.TnmEdition !== undefined) {
+                    TumourStage_TnmFinding_TnmEdition= element[1].TumourStage.TnmFinding.TnmEdition
                 }
 
-                stringMOB = `${MonthOfBirth}`
+                stringTumourStage_TnmFinding_TnmEdition = `${TumourStage.TnmFinding.TnmEdition}`
             } else {
-                stringMOB = ''
+                stringTumourStage_TnmFinding_TnmEdition = ''
             }
 
-            let MonthOfDeath= ''
-            let stringMOD = ''
 
-            if (element[1].MonthOfDeath !== '' && element[1].MonthOfDeath !== undefined) {
-                if (element[1].MonthOfDeath !== undefined) {
-                    MonthOfDeath= element[1].MonthOfDeath
+            let TumourStage_TnmFinding_Clinical_T_category= ''
+            let stringTumourStage_TnmFinding_Clinical_T_category = ''
+
+            if (element[1].TumourStage.TnmFinding.Clinical_T_category !== '' && element[1].TumourStage.TnmFinding.Clinical_T_category !== undefined) {
+                if (element[1].TumourStage.TnmFinding.Clinical_T_category !== undefined) {
+                    TumourStage_TnmFinding_Clinical_T_category= element[1].TumourStage.TnmFinding.Clinical_T_category
                 }
 
-                stringMOD = `${MonthOfDeath}`
+                stringTumourStage_TnmFinding_Clinical_T_category = `${TumourStage.TnmFinding.Clinical_T_category}`
             } else {
-                stringMOD = ''
+                stringTumourStage_TnmFinding_Clinical_T_category = ''
             }
 
-            let MonthOfDiagnosis= ''
-            let stringMODi = ''
+            let TumourStage_TnmFinding_Pathological_T_category= ''
+            let stringTumourStage_TnmFinding_Pathological_T_category= ''
 
-            if (element[1].MonthOfDiagnosis !== '' && element[1].MonthOfDiagnosis !== undefined) {
-                if (element[1].MonthOfDiagnosis !== undefined) {
-                    MonthOfDiagnosis= element[1].MonthOfDiagnosis
+            if (element[1].TumourStage.TnmFinding.Pathological_T_category !== '' && element[1].TumourStage.TnmFinding.Pathological_T_category !== undefined) {
+                if (element[1].TumourStage.TnmFinding.Pathological_T_category !== undefined) {
+                    TumourStage_TnmFinding_Pathological_T_category= element[1].TumourStage.TnmFinding.Pathological_T_category
                 }
 
-                stringMODi = `${MonthOfDiagnosis}`
+                stringTumourStage_TnmFinding_Pathological_T_category = `${TumourStage.TnmFinding.Pathological_T_category}`
             } else {
-                stringMODi = ''
+                stringTumourStage_TnmFinding_Pathological_T_category = ''
             }
 
-            let Morphology= ''
-            let stringMorph = ''
+            let TumourStage_TnmFinding_Clinical_N_category= ''
+            let stringTumourStage_TnmFinding_Clinical_N_category= ''
 
-            if (element[1].Morphology !== '' && element[1].Morphology !== undefined) {
-                if (element[1].Morphology !== undefined) {
-                    Morphology= element[1].Morphology
+            if (element[1].TumourStage.TnmFinding.Clinical_N_category !== '' && element[1].TumourStage.TnmFinding.Clinical_N_category !== undefined) {
+                if (element[1].TumourStage.TnmFinding.Clinical_N_category !== undefined) {
+                    TumourStage_TnmFinding_Clinical_N_category= element[1].TumourStage.TnmFinding.Clinical_N_category
                 }
 
-                stringMorph = `${Morphology}`
+                stringTumourStage_TnmFinding_Clinical_N_category = `${TumourStage.TnmFinding.Clinical_N_category}`
             } else {
-                stringMorph = ''
+                stringTumourStage_TnmFinding_Clinical_N_category = ''
             }
 
-            let NumberOfTumours= ''
-            let stringNOT = ''
+            let TumourStage_TnmFinding_Pathological_N_category= ''
+            let stringTumourStage_TnmFinding_Pathological_N_category= ''
 
-            if (element[1].NumberOfTumours !== '' && element[1].NumberOfTumours !== undefined) {
-                if (element[1].NumberOfTumours !== undefined) {
-                    NumberOfTumours= element[1].NumberOfTumours
+            if (element[1].TumourStage.TnmFinding.Pathological_N_category !== '' && element[1].TumourStage.TnmFinding.Pathological_N_category !== undefined) {
+                if (element[1].TumourStage.TnmFinding.Pathological_N_category !== undefined) {
+                    TumourStage_TnmFinding_Pathological_N_category= element[1].TumourStage.TnmFinding.Pathological_N_category
                 }
 
-                stringNOT = `${NumberOfTumours}`
+                stringTumourStage_TnmFinding_Pathological_N_category = `${TumourStage.TnmFinding.Pathological_N_category}`
             } else {
-                stringNOT = ''
+                stringTumourStage_TnmFinding_Pathological_N_category = ''
             }
 
-            let ProvinceCode= ''
-            let stringPCode = ''
+            let TumourStage_TnmFinding_Clinical_M_category= ''
+            let stringTumourStage_TnmFinding_Clinical_M_category= ''
 
-            if (element[1].ProvinceCode !== '' && element[1].ProvinceCode !== undefined) {
-                if (element[1].ProvinceCode !== undefined) {
-                    ProvinceCode= element[1].ProvinceCode
+            if (element[1].TumourStage.TnmFinding.Clinical_M_category !== '' && element[1].TumourStage.TnmFinding.Clinical_M_category !== undefined) {
+                if (element[1].TumourStage.TnmFinding.Clinical_M_category !== undefined) {
+                    TumourStage_TnmFinding_Clinical_M_category= element[1].TumourStage.TnmFinding.Clinical_M_category
                 }
 
-                stringPCode = `${ProvinceCode}`
+                stringTumourStage_TnmFinding_Clinical_M_category = `${TumourStage.TnmFinding.Clinical_M_category}`
             } else {
-                stringPCode = ''
+                stringTumourStage_TnmFinding_Clinical_M_category = ''
             }
 
-            let RegistryYear= ''
-            let stringRY = ''
+            let TumourStage_TnmFinding_Pathological_M_category= ''
+            let stringTumourStage_TnmFinding_Pathological_M_category= ''
 
-            if (element[1].RegistryYear !== '' && element[1].RegistryYear !== undefined) {
-                if (element[1].RegistryYear !== undefined) {
-                    RegistryYear= element[1].RegistryYear
+            if (element[1].TumourStage.TnmFinding.Pathological_M_category !== '' && element[1].TumourStage.TnmFinding.Pathological_M_category !== undefined) {
+                if (element[1].TumourStage.TnmFinding.Pathological_M_category !== undefined) {
+                    TumourStage_TnmFinding_Pathological_M_category= element[1].TumourStage.TnmFinding.Pathological_M_category
                 }
 
-                stringRY = `${RegistryYear}`
+                stringTumourStage_TnmFinding_Pathological_M_category = `${TumourStage.TnmFinding.Pathological_M_category}`
             } else {
-                stringRY = ''
+                stringTumourStage_TnmFinding_Pathological_M_category = ''
             }
 
-            let SexAtBirth= ''
-            let stringSAB = ''
+            let TumourStage_TnmFinding_TnmStage= ''
+            let stringTumourStage_TnmFinding_TnmStage= ''
 
-            if (element[1].SexAtBirth !== '' && element[1].SexAtBirth !== undefined) {
-                if (element[1].SexAtBirth !== undefined) {
-                    SexAtBirth= element[1].SexAtBirth
+            if (element[1].TumourStage.TnmFinding.TnmStage !== '' && element[1].TumourStage.TnmFinding.TnmStage !== undefined) {
+                if (element[1].TumourStage.TnmFinding.TnmStage !== undefined) {
+                    TumourStage_TnmFinding_TnmStage= element[1].TumourStage.TnmFinding.TnmStage
                 }
 
-                stringSAB = `${SexAtBirth}`
+                stringTumourStage_TnmFinding_TnmStage = `${TumourStage.TnmFinding.TnmStage}`
             } else {
-                stringSAB = ''
+                stringTumourStage_TnmFinding_TnmStage = ''
             }
 
-            let TNMEdition= ''
-            let stringTNME = ''
+            let TumourStage_TorontoChildhoodCancerStage_Tier1= ''
+            let stringTumourStage_TorontoChildhoodCancerStage_Tier1= ''
 
-            if (element[1].TNMEdition !== '' && element[1].TNMEdition !== undefined) {
-                if (element[1].TNMEdition !== undefined) {
-                    TNMEdition= element[1].TNMEdition
+            if (element[1].TumourStage.TorontoChildhoodCancerStage_Tier1 !== '' && element[1].TumourStage.TorontoChildhoodCancerStage_Tier1 !== undefined) {
+                if (element[1].TumourStage.TorontoChildhoodCancerStage_Tier1 !== undefined) {
+                    TumourStage_TorontoChildhoodCancerStage_Tier1 = element[1].TumourStage.TorontoChildhoodCancerStage_Tier1
                 }
 
-                stringTNME = `${TNMEdition}`
+                stringTumourStage_TorontoChildhoodCancerStage_Tier1 = `${TumourStage.TorontoChildhoodCancerStage_Tier1}`
             } else {
-                stringTNME = ''
+                stringTumourStage_TorontoChildhoodCancerStage_Tier1 = ''
             }
 
-            let TNMStage= ''
-            let stringTNMS = ''
+            let TumourStage_TorontoChildhoodCancerStage_Tier2= ''
+            let stringTumourStage_TorontoChildhoodCancerStage_Tier2= ''
 
-            if (element[1].TNMStage !== '' && element[1].TNMStage !== undefined) {
-                if (element[1].TNMStage !== undefined) {
-                    TNMStage= element[1].TNMStage
+            if (element[1].TumourStage.TorontoChildhoodCancerStage_Tier2 !== '' && element[1].TumourStage.TorontoChildhoodCancerStage_Tier2 !== undefined) {
+                if (element[1].TumourStage.TorontoChildhoodCancerStage_Tier2 !== undefined) {
+                    TumourStage_TorontoChildhoodCancerStage_Tier2 = element[1].TumourStage.TorontoChildhoodCancerStage_Tier2
                 }
 
-                stringTNMS = `${TNMStage}`
+                stringTumourStage_TorontoChildhoodCancerStage_Tier2 = `${TumourStage.TorontoChildhoodCancerStage_Tier2}`
             } else {
-                stringTNMS = ''
+                stringTumourStage_TorontoChildhoodCancerStage_Tier2 = ''
             }
 
-            let TopographyLocation= ''
-            let stringTL = ''
+            let TumourStage_EssentialTnmStage= ''
+            let stringTumourStage_EssentialTnmStage= ''
 
-            if (element[1].TopographyLocation !== '' && element[1].TopographyLocation !== undefined) {
-                if (element[1].TopographyLocation !== undefined) {
-                    TopographyLocation= element[1].TopographyLocation
+            if (element[1].TumourStage.EssentialTnmStage !== '' && element[1].TumourStage.EssentialTnmStage!== undefined) {
+                if (element[1].TumourStage.TorontoChildhoodCancerStage_Tier2 !== undefined) {
+                    TumourStage_EssentialTnmStage = element[1].TumourStage.EssentialTnmStage
                 }
 
-                stringTL = `${TopographyLocation}`
+                stringTumourStage_EssentialTnmStage = `${TumourStage.EssentialTnmStage}`
             } else {
-                stringTL = ''
+                stringTumourStage_EssentialTnmStage = ''
             }
 
-            let TopographySublocation= ''
-            let stringTS = ''
+            let TumourStage_AnnArborStagingSystem= ''
+            let stringTumourStage_AnnArborStagingSystem= ''
 
-            if (element[1].TopographySublocation !== '' && element[1].TopographySublocation !== undefined) {
-                if (element[1].TopographySublocation !== undefined) {
-                    TopographySublocation= element[1].TopographySublocation
+            if (element[1].TumourStage.AnnArborStagingSystem !== '' && element[1].TumourStage.AnnArborStagingSystem!== undefined) {
+                if (element[1].TumourStage.AnnArborStagingSystem !== undefined) {
+                    TumourStage_AnnArborStagingSystem = element[1].TumourStage.AnnArborStagingSystem
                 }
 
-                stringTS = `${TopographySublocation}`
+                stringTumourStage_AnnArborStagingSystem = `${TumourStage.AnnArborStagingSystem}`
             } else {
-                stringTS = ''
+                stringTumourStage_AnnArborStagingSystem = ''
             }
 
-            let TumourSequenceNum= ''
-            let stringTSN = ''
+            let TumourStage_LuganoStagingSystem= ''
+            let stringTumourStage_LuganoStagingSystem= ''
 
-            if (element[1].TumourSequenceNum !== '' && element[1].TumourSequenceNum !== undefined) {
-                if (element[1].TumourSequenceNum !== undefined) {
-                    TumourSequenceNum= element[1].TumourSequenceNum
+            if (element[1].TumourStage.LuganoStagingSystem !== '' && element[1].TumourStage.LuganoStagingSystem!== undefined) {
+                if (element[1].TumourStage.LuganoStagingSystem !== undefined) {
+                    TumourStage_LuganoStagingSystem = element[1].TumourStage.LuganoStagingSystem
                 }
 
-                stringTSN = `${TumourSequenceNum}`
+                stringTumourStage_LuganoStagingSystem = `${TumourStage.LuganoStagingSystem}`
             } else {
-                stringTSN = ''
+                stringTumourStage_LuganoStagingSystem = ''
+            }
+
+            let TumourStage_DukesStage= ''
+            let stringTumourStage_DukesStage= ''
+
+            if (element[1].TumourStage.DukesStage !== '' && element[1].TumourStage.DukesStage!== undefined) {
+                if (element[1].TumourStage.DukesStage !== undefined) {
+                    TumourStage_DukesStage = element[1].TumourStage.DukesStage
+                }
+
+                stringTumourStage_DukesStage = `${TumourStage.DukesStage}`
+            } else {
+                stringTumourStage_DukesStage = ''
+            }
+
+            let TumourStage_SummaryExtentOfDisease= ''
+            let stringTumourStage_SummaryExtentOfDisease= ''
+
+            if (element[1].TumourStage.SummaryExtentOfDisease !== '' && element[1].TumourStage.SummaryExtentOfDisease!== undefined) {
+                if (element[1].TumourStage.SummaryExtentOfDisease !== undefined) {
+                    TumourStage_SummaryExtentOfDisease = element[1].TumourStage.SummaryExtentOfDisease
+                }
+
+                stringTumourStage_SummaryExtentOfDisease = `${TumourStage.SummaryExtentOfDisease}`
+            } else {
+                stringTumourStage_SummaryExtentOfDisease = ''
+            }
+
+            let TumourStage_FigoStage= ''
+            let stringTumourStage_FigoStage= ''
+
+            if (element[1].TumourStage.FigoStage !== '' && element[1].TumourStage.FigoStage!== undefined) {
+                if (element[1].TumourStage.FigoStage !== undefined) {
+                    TumourStage_FigoStage = element[1].TumourStage.FigoStage
+                }
+
+                stringTumourStage_FigoStage = `${TumourStage.FigoStage}`
+            } else {
+                stringTumourStage_FigoStage = ''
+            }
+
+
+
+            let PrognosticTumourFactors= ''
+            let stringPrognosticTumourFactors = ''
+
+            if (element[1].PrognosticTumourFactors !== '' && element[1].PrognosticTumourFactors !== undefined) {
+                if (element[1].PrognosticTumourFactors !== undefined) {
+                    PrognosticTumourFactors= element[1].PrognosticTumourFactors
+                }
+
+                stringPrognosticTumourFactors = `${PrognosticTumourFactors}`
+            } else {
+                stringPrognosticTumourFactors = ''
+            }
+
+            let PrimaryTreatment_Surgery= ''
+            let stringPrimaryTreatment_Surgery = ''
+
+            if (element[1].PrimaryTreatment.Surgery !== '' && element[1].PrimaryTreatment.Surgery !== undefined) {
+                if (element[1].PrimaryTreatment.Surgery !== undefined) {
+                    PrimaryTreatment_Surgery= element[1].PrimaryTreatment.Surgery
+                }
+
+                stringPrimaryTreatment_Surgery = `${PrimaryTreatment_Surgery}`
+            } else {
+                stringPrimaryTreatment_Surgery = ''
+            }
+
+            let PrimaryTreatment_Radiotherapy= ''
+            let stringPrimaryTreatment_Radiotherapy = ''
+
+            if (element[1].PrimaryTreatment.Radiotherapy !== '' && element[1].PrimaryTreatment.Radiotherapy !== undefined) {
+                if (element[1].PrimaryTreatment.Radiotherapy !== undefined) {
+                    PrimaryTreatment_Radiotherapy= element[1].PrimaryTreatment.Radiotherapy
+                }
+
+                stringPrimaryTreatment_Radiotherapy = `${PrimaryTreatment_Radiotherapy}`
+            } else {
+                stringPrimaryTreatment_Radiotherapy= ''
+            }
+
+            let PrimaryTreatment_Chemotherapy= ''
+            let stringPrimaryTreatment_Chemotherapy = ''
+
+            if (element[1].PrimaryTreatment.Chemotherapy !== '' && element[1].PrimaryTreatment.Chemotherapy !== undefined) {
+                if (element[1].PrimaryTreatment.Chemotherapy !== undefined) {
+                    PrimaryTreatment_Chemotherapy= element[1].PrimaryTreatment.Chemotherapy
+                }
+
+                stringPrimaryTreatment_Chemotherapy = `${PrimaryTreatment_Chemotherapy}`
+            } else {
+                stringPrimaryTreatment_Chemotherapy= ''
+            }
+
+            let PrimaryTreatment_TargetedTherapy= ''
+            let stringPrimaryTreatment_TargetedTherapy = ''
+
+            if (element[1].PrimaryTreatment.TargetedTherapy !== '' && element[1].PrimaryTreatment.TargetedTherapy !== undefined) {
+                if (element[1].PrimaryTreatment.TargetedTherapy !== undefined) {
+                    PrimaryTreatment_TargetedTherapy= element[1].PrimaryTreatment.TargetedTherapy
+                }
+
+                stringPrimaryTreatment_TargetedTherapy = `${PrimaryTreatment_TargetedTherapy}`
+            } else {
+                stringPrimaryTreatment_TargetedTherapy= ''
+            }
+
+            let PrimaryTreatment_Immunotherapy= ''
+            let stringPrimaryTreatment_Immunotherapy = ''
+
+            if (element[1].PrimaryTreatment.Immunotherapy !== '' && element[1].PrimaryTreatment.Immunotherapy !== undefined) {
+                if (element[1].PrimaryTreatment.Immunotherapy !== undefined) {
+                    PrimaryTreatment_Immunotherapy= element[1].PrimaryTreatment.Immunotherapy
+                }
+
+                stringPrimaryTreatment_Immunotherapy = `${PrimaryTreatment_Immunotherapy}`
+            } else {
+                stringPrimaryTreatment_Immunotherapy= ''
+            }
+
+            let PrimaryTreatment_HormoneTherapy= ''
+            let stringPrimaryTreatment_HormoneTherapy = ''
+
+            if (element[1].PrimaryTreatment.HormoneTherapy !== '' && element[1].PrimaryTreatment.HormoneTherapy !== undefined) {
+                if (element[1].PrimaryTreatment.HormoneTherapy !== undefined) {
+                    PrimaryTreatment_HormoneTherapy= element[1].PrimaryTreatment.HormoneTherapy
+                }
+
+                stringPrimaryTreatment_HormoneTherapy = `${PrimaryTreatment_HormoneTherapy}`
+            } else {
+                stringPrimaryTreatment_HormoneTherapy= ''
+            }
+
+            let PrimaryTreatment_Other= ''
+            let stringPrimaryTreatment_Other = ''
+
+            if (element[1].PrimaryTreatment.Other !== '' && element[1].PrimaryTreatment.Other !== undefined) {
+                if (element[1].PrimaryTreatment.Other !== undefined) {
+                    PrimaryTreatment_Other= element[1].PrimaryTreatment.Other
+                }
+
+                stringPrimaryTreatment_Other = `${PrimaryTreatment_Other}`
+            } else {
+                stringPrimaryTreatment_Other= ''
+            }
+
+            let PrimaryTreatment_StemCellTransplantation= ''
+            let stringPrimaryTreatment_StemCellTransplantation = ''
+
+            if (element[1].PrimaryTreatment.StemCellTransplantation !== '' && element[1].PrimaryTreatment.StemCellTransplantation !== undefined) {
+                if (element[1].PrimaryTreatment.StemCellTransplantation !== undefined) {
+                    PrimaryTreatment_StemCellTransplantation= element[1].PrimaryTreatment.StemCellTransplantation
+                }
+
+                stringPrimaryTreatment_StemCellTransplantation = `${PrimaryTreatment_StemCellTransplantation}`
+            } else {
+                stringPrimaryTreatment_StemCellTransplantation= ''
+            }
+
+            let HospitalOfTreatment= ''
+            let stringHospitalOfTreatment = ''
+
+            if (element[1].HospitalOfTreatment !== '' && element[1].HospitalOfTreatment !== undefined) {
+                if (element[1].HospitalOfTreatment !== undefined) {
+                    HospitalOfTreatment= element[1].HospitalOfTreatment
+                }
+
+                stringHospitalOfTreatment = `${HospitalOfTreatment}`
+            } else {
+                stringHospitalOfTreatment = ''
+            }
+
+            let DateOfRecurrence_DayOfRecurrence= ''
+            let stringDateOfRecurrence_DayOfRecurrence = ''
+
+            if (element[1].DateOfRecurrence.DayOfRecurrence !== '' && element[1].DateOfRecurrence.DayOfRecurrence !== undefined) {
+                if (element[1].DateOfRecurrence.DayOfRecurrence !== undefined) {
+                    DateOfRecurrence_DayOfRecurrence= element[1].DateOfRecurrence.DayOfRecurrence
+                }
+
+                stringDateOfRecurrence_DayOfRecurrence = `${DateOfRecurrence_DayOfRecurrence}`
+            } else {
+                stringDateOfRecurrence_DayOfRecurrence = ''
+            }
+
+            let DateOfRecurrence_MonthOfRecurrence= ''
+            let stringDateOfRecurrence_MonthOfRecurrence = ''
+
+            if (element[1].DateOfRecurrence.MonthOfRecurrence !== '' && element[1].DateOfRecurrence.MonthOfRecurrence !== undefined) {
+                if (element[1].DateOfRecurrence.MonthOfRecurrence !== undefined) {
+                    DateOfRecurrence_MonthOfRecurrence= element[1].DateOfRecurrence.MonthOfRecurrence
+                }
+
+                stringDateOfRecurrence_MonthOfRecurrence = `${DateOfRecurrence_MonthOfRecurrence}`
+            } else {
+                stringDateOfRecurrence_MonthOfRecurrence = ''
+            }
+
+            let DateOfRecurrence_YearOfRecurrence= ''
+            let stringDateOfRecurrence_YearOfRecurrence = ''
+
+            if (element[1].DateOfRecurrence.YearOfRecurrence !== '' && element[1].DateOfRecurrence.YearOfRecurrence !== undefined) {
+                if (element[1].DateOfRecurrence.YearOfRecurrence !== undefined) {
+                    DateOfRecurrence_YearOfRecurrence= element[1].DateOfRecurrence.YearOfRecurrence
+                }
+
+                stringDateOfRecurrence_YearOfRecurrence = `${DateOfRecurrence_YearOfRecurrence}`
+            } else {
+                stringDateOfRecurrence_YearOfRecurrence = ''
+            }
+
+            let SiteOfRecurrence= ''
+            let stringSiteOfRecurrence = ''
+
+            if (element[1].SiteOfRecurrence !== '' && element[1].SiteOfRecurrence !== undefined) {
+                if (element[1].SiteOfRecurrence !== undefined) {
+                    SiteOfRecurrence= element[1].SiteOfRecurrence
+                }
+
+                stringSiteOfRecurrence = `${SiteOfRecurrence}`
+            } else {
+                stringSiteOfRecurrence = ''
             }
 
             let VitalStatus= ''
-            let stringVS = ''
+            let stringVitalStatus = ''
 
             if (element[1].VitalStatus !== '' && element[1].VitalStatus !== undefined) {
                 if (element[1].VitalStatus !== undefined) {
-                    VitalStatus= element[1].VitalStatus
+                    Morphology= element[1].VitalStatus
                 }
 
-                stringVS = `${VitalStatus}`
+                stringVitalStatus = `${VitalStatus}`
             } else {
-                stringVS = ''
+                stringVitalStatus = ''
             }
 
-            let YearOfBirth= ''
-            let stringYOB = ''
+            let VitalStatusDate_DayVitalStatus= ''
+            let stringVitalStatusDate_DayVitalStatus = ''
 
-            if (element[1].YearOfBirth !== '' && element[1].YearOfBirth !== undefined) {
-                if (element[1].YearOfBirth !== undefined) {
-                    YearOfBirth= element[1].YearOfBirth
+            if (element[1].VitalStatusDate.DayVitalStatus !== '' && element[1].VitalStatusDate.DayVitalStatus !== undefined) {
+                if (element[1].VitalStatusDate.DayVitalStatus !== undefined) {
+                    VitalStatusDate_DayVitalStatus= element[1].VitalStatusDate.DayVitalStatus
                 }
 
-                stringYOB = `${YearOfBirth}`
+                stringVitalStatusDate_DayVitalStatus= `${VitalStatusDate_DayVitalStatus}`
             } else {
-                stringYOB = ''
+                stringVitalStatusDate_DayVitalStatus = ''
             }
 
-            let YearOfDeath= ''
-            let stringYOD = ''
 
-            if (element[1].YearOfDeath !== '' && element[1].YearOfDeath !== undefined) {
-                if (element[1].YearOfDeath !== undefined) {
-                    YearOfDeath= element[1].YearOfDeath
+            let VitalStatusDate_MonthVitalStatus= ''
+            let stringVitalStatusDate_MonthVitalStatus = ''
+
+            if (element[1].VitalStatusDate.MonthVitalStatus !== '' && element[1].VitalStatusDate.MonthVitalStatus !== undefined) {
+                if (element[1].VitalStatusDate.MonthVitalStatus !== undefined) {
+                    VitalStatusDate_MonthVitalStatus= element[1].VitalStatusDate.MonthVitalStatus
                 }
 
-                stringYOD = `${YearOfDeath}`
+                stringVitalStatusDate_MonthVitalStatus= `${VitalStatusDate_MonthVitalStatus}`
             } else {
-                stringYOD = ''
+                stringVitalStatusDate_MonthVitalStatus = ''
             }
 
-            let YearOfDiagnosis= ''
-            let stringYODi = ''
+            let VitalStatusDate_YearVitalStatus= ''
+            let stringVitalStatusDate_YearVitalStatus = ''
 
-            if (element[1].YearOfDiagnosis !== '' && element[1].YearOfDiagnosis !== undefined) {
-                if (element[1].YearOfDiagnosis !== undefined) {
-                    YearOfDiagnosis= element[1].YearOfDiagnosis
+            if (element[1].VitalStatusDate.YearVitalStatus !== '' && element[1].VitalStatusDate.YearVitalStatus !== undefined) {
+                if (element[1].VitalStatusDate.YearVitalStatus !== undefined) {
+                    VitalStatusDate_YearVitalStatus= element[1].VitalStatusDate.YearVitalStatus
                 }
 
-                stringYODi = `${YearOfDiagnosis}`
+                stringVitalStatusDate_YearVitalStatus= `${VitalStatusDate_YearVitalStatus}`
             } else {
-                stringYODi = ''
+                stringVitalStatusDate_YearVitalStatus = ''
             }
 
-            rows.push({ id: index, IndividualId: element[1].id, Beacon: element[0], age: stringAge, behaviour: stringBeh, causeofdeath: stringCOD, causeofdeathcode: stringCODe, dayofbirth: stringDOB, dayofdeath: stringDOD, dayofdiagnosis: stringDODi, diagnosisbasis: stringDiBasis, endmonitoringday: stringEMD, endmonitoringmonth: stringEMM, endmonitoringyear: stringEMY, grade: stringGrade, iarcflag: stringIARC, icdedition: stringICDE, mtnm: stringMTNM, monthofbirth: stringMOB, monthofdeath: stringMOD, monthofdiagnosis: stringMODi, morphology: stringMorph, ntnm: stringNTNM, numberoftumours: stringNOT, provincecode: stringPCode, registryyear: stringRY, sexatbirth: stringSAB, tnmedition: stringTNME, tnmstage: stringTNMS, ttnm: stringTTNM, topographylocation: stringTL, topographysublocation: stringTS, tumoursequencenum: stringTSN, vitalstatus: stringVS, yearofbirth: stringYOB, yearofdeath: stringYOD, yearofdiagnosis: stringYODi })
+
+            let SurvivalDuration= ''
+            let stringSurvivalDuration = ''
+
+            if (element[1].SurvivalDuration !== '' && element[1].SurvivalDuration !== undefined) {
+                if (element[1].SurvivalDuration !== undefined) {
+                    SurvivalDuration= element[1].SurvivalDuration
+                }
+
+                stringSurvivalDuration= `${SurvivalDuration}`
+            } else {
+                stringSurvivalDuration = ''
+            }
+
+            let CauseOfDeath= ''
+            let stringCauseOfDeath= ''
+
+            if (element[1].CauseOfDeath !== '' && element[1].CauseOfDeath !== undefined) {
+                if (element[1].CauseOfDeath !== undefined) {
+                    RegistryYear= element[1].CauseOfDeath
+                }
+
+                stringCauseOfDeath = `${CauseOfDeath}`
+            } else {
+                stringCauseOfDeath = ''
+            }
+
+            let CauseOfDeath_ICDedition= ''
+            let stringCauseOfDeath_ICDedition = ''
+
+            if (element[1].CauseOfDeath_ICDedition !== '' && element[1].CauseOfDeath_ICDedition !== undefined) {
+                if (element[1].CauseOfDeath_ICDedition !== undefined) {
+                    SexAtBirth= element[1].CauseOfDeath_ICDedition
+                }
+
+                stringCauseOfDeath_ICDedition = `${CauseOfDeath_ICDedition}`
+            } else {
+                stringCauseOfDeath_ICDedition = ''
+            }
+
+
+            rows.push({ id: index, 
+                Beacon: element[0], 
+                PatientID: stringPatientID, 
+                AgeOfOnset: stringAgeOfOnset, 
+                DateOfBirth_DayOfBirth: stringDateOfBirth_DayOfBirth, 
+                DateOfBirth_MonthOfBirth: stringDateOfBirth_MonthOfBirth, 
+                DateOfBirth_YearOfBirth, stringDateOfBirth_YearOfBirth, 
+                Sex: stringSex, 
+                TumourIdentificationCode: stringTumourIdentificationCode, 
+                GeographicResidence: stringGeographicResidence, 
+                HospitalOfDiagnosis: stringHospitalOfDiagnosis, 
+                IncidenceDate_IncidenceDay: stringIncidenceDate_IncidenceDay, 
+                IncidenceDate_IncidenceMonth: stringIncidenceDate_IncidenceMonth, 
+                IncidenceDate_IncidenceYear: stringIncidenceDate_IncidenceYear, 
+                BasisOfDiagnosis: stringBasisOfDiagnosis, 
+                TumourTopography: stringTumourTopography, 
+                TumourMorphology, stringTumourMorphology, 
+                TumourBehaviour: stringTumourBehaviour, 
+                TumourGrade: stringTumourGrade, 
+                TumourLaterality:stringTumourLaterality, 
+                TumourStage_TnmFinding_TnmEdition: stringTumourStage_TnmFinding_TnmEdition, 
+                TumourStage_TnmFinding_Clinical_T_category: stringTumourStage_TnmFinding_Clinical_T_category, 
+                TumourStage_TnmFinding_Clinical_N_category: stringTumourStage_TnmFinding_Clinical_N_category, 
+                TumourStage_TnmFinding_Clinical_M_category: stringTumourStage_TnmFinding_Clinical_M_category, 
+                TumourStage_TnmFinding_Pathological_T_category: stringTumourStage_TnmFinding_Pathological_T_category, 
+                TumourStage_TnmFinding_Pathological_N_category: stringTumourStage_TnmFinding_Pathological_N_category, 
+                TumourStage_TnmFinding_Pathological_M_category: stringTumourStage_TnmFinding_Pathological_M_category, 
+                TumourStage_TnmFinding_TnmEdition:stringTumourStage_TnmFinding_TnmEdition, 
+                TumourStage_TorontoChildhoodCancerStage_Tier1: stringTumourStage_TorontoChildhoodCancerStage_Tier1, 
+                TumourStage_TorontoChildhoodCancerStage_Tier2: stringTumourStage_TorontoChildhoodCancerStage_Tier2, 
+                TumourStage_EssentialTnmStage: stringTumourStage_EssentialTnmStage, 
+                TumourStage_AnnArborStagingSystem: stringTumourStage_AnnArborStagingSystem, 
+                TumourStage_LuganoStagingSystem: stringTumourStage_LuganoStagingSystem, 
+                TumourStage_DukesStage: stringTumourStage_DukesStage, 
+                TumourStage_SummaryExtentOfDisease: stringTumourStage_SummaryExtentOfDisease, 
+                TumourStage_FigoStage: stringTumourStage_FigoStage, 
+                PrognosticTumourFactors: stringPrognosticTumourFactors, 
+                PrimaryTreatment_Surgery: stringPrimaryTreatment_Surgery, 
+                PrimaryTreatment_Chemotherapy: stringPrimaryTreatment_Chemotherapy, 
+                PrimaryTreatment_HormoneTherapy: stringPrimaryTreatment_HormoneTherapy, 
+                PrimaryTreatment_Immunotherapy: stringPrimaryTreatment_Immunotherapy, 
+                PrimaryTreatment_Other: stringPrimaryTreatment_Other, 
+                PrimaryTreatment_Radiotherapy: stringPrimaryTreatment_Radiotherapy, 
+                PrimaryTreatment_StemCellTransplantation: stringPrimaryTreatment_StemCellTransplantation, 
+                PrimaryTreatment_TargetedTherapy: stringPrimaryTreatment_TargetedTherapy,
+                HospitalOfTreatment: stringHospitalOfTreatment,
+                DateOfRecurrence_DayOfRecurrence: stringDateOfRecurrence_DayOfRecurrence,
+                DateOfRecurrence_MonthOfRecurrence: stringDateOfRecurrence_MonthOfRecurrence,
+                DateOfRecurrence_YearOfRecurrence: stringDateOfRecurrence_YearOfRecurrence,
+                SiteOfRecurrence: stringSiteOfRecurrence,
+                VitalStatus: stringVitalStatus,
+                VitalStatusDate_DayVitalStatus: stringVitalStatusDate_DayVitalStatus,
+                VitalStatusDate_MonthVitalStatus: stringVitalStatusDate_MonthVitalStatus,
+                VitalStatusDate_YearVitalStatus: stringVitalStatusDate_YearVitalStatus,
+                SurvivalDuration: stringSurvivalDuration,
+                CauseOfDeath: stringCauseOfDeath,
+                CauseOfDeath_ICDedition: stringCauseOfDeath_ICDedition  })
 
         }
 
