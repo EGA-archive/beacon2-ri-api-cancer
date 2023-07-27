@@ -114,7 +114,7 @@ def build_beacon_resultset_response_by_dataset(data,
         LOG.debug(doc)
         for dataset_dict in list_of_dataset_dicts:
             try:
-                if doc['id'] in dataset_dict['ids'][0]['individualIds']:
+                if doc['PatientID'] in dataset_dict['ids'][0]['individualIds']:
                     dataset_id = dataset_dict['dataset']
                     response_dict[dataset_id].append(doc)
             except Exception as e:

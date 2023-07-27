@@ -1,40 +1,76 @@
 [{
-      "id": "01234567890123456789",
-      "Age": 44,
-      "DayOfBirth": 2,
-      "MonthOfBirth": 2,
-      "YearOfBirth": 1982,
-      "SexAtBirth": 2,
-      "ProvinceCode": "08",
-      "TumourSequenceNum": 24,
-      "NumberOfTumours": 2,
-
-
-      "DayOfDiagnosis": 2,
-      "MonthOfDiagnosis": 2,
-      "YearOfDiagnosis": 2022,
-      "RegistryYear": 2022,
-
-      "TopographyLocation": "C15",
-      "TopographySublocation": 3,
-      "Morphology": 8170,
-      "Behaviour": 3,
-      "Grade": 1,
-      "DiagnosisBasis": 4,
-      "VitalStatus": 2,
-      "DayOfDeath": 1,
-      "MonthOfDeath": 1,
-      "YearOfDeath": 2023,
-      "EndMonitoringDay": 1,
-      "EndMonitoringMonth": 1,
-      "EndMonitoringYear": 2022,
-      "CauseOfDeath": "1",
-      "CauseOfDeathCode": "C182",
-      "ICDEdition": 10,
-      "TTNM": "pTa",
-      "NTNM": "N1b",
-      "MTNM": "M0",
-      "TNMStage": "IIB",
-      "TNMEdition": 3,
-      "IARCflag": 1
+      "PatientID": 
+            "A12B34C56D78E90F123"
+      ,
+      "AgeOfOnset": 44,
+      "DateOfBirth": {
+            "DayOfBirth": 2,
+            "MonthOfBirth": 2,
+            "YearOfBirth": 1978
+      },
+      "Sex": 2,
+      "TumourIdentificacionCode": 98,
+      "GeographicResidence": 42,
+      "HospitalOfDiagnosis": "Hospital 1",
+      "IncidenceDate": {
+            "IncidenceDay": 4,
+            "IncidenceMonth": 6,
+            "IncidenceYear": 2022
+      },
+      "BasisOfDiagnosis": 7,
+      "TumourTopography": "C15",
+      "TumourMorphology": 8170,
+      "TumourBehaviour": 3,
+      "TumourGrade": 1,
+      "TumourLaterality": 2,
+      "TumourStage": {
+            "TnmFinding": {
+                  "TnmEdition": "8th",
+                  "Clinical_T_category": "cT0",
+                  "Pathological_T_category": "pT0",
+                  "Clinical_N_category": "cN1",
+                  "Pathological_N_category": "pN1",
+                  "Clinical_M_category": "cM1a",
+                  "Pathological_M_category": "pM1a",
+                  "TnmStage": "IIB"
+            },
+            "TorontoChildhoodCancerStage_Tier1": "a",
+            "TorontoChildhoodCancerStage_Tier2": "a",
+            "EssentialTnmStage": "a",
+            "AnnArborStagingSystem": "a",
+            "LuganoStagingSystem": "a",
+            "DukesStage": "a",
+            "SummaryExtentOfDisease": "a",
+            "FigoStage": "a"
+      },
+      "PrognosticTumourFactors": [
+            "HER2 positive",
+            "PR positive"
+      ],
+      "PrimaryTreatment": {
+            "Surgery": 2,
+            "Radiotherapy": 3,
+            "Chemotherapy": 0,
+            "TargetedTherapy": 1,
+            "Immunotherapy": 0,
+            "HormoneTherapy": 0,
+            "Other": 0,
+            "StemCellTransplantation": 0
+      },
+      "HospitalOfTreatment": "Hospital 1",
+      "DateOfRecurrence": {
+            "DayOfRecurrence": 1,
+            "MonthOfRecurrence": 4,
+            "YearOfRecurrence": 2021
+      },
+      "SiteOfRecurrence": "Site 1",
+      "VitalStatus": 1,
+      "VitalStatusDate": {
+            "DayVitalStatus": 30,
+            "MonthVitalStatus": 6,
+            "YearVitalStatus": 2023
+      },
+      "SurvivalDuration": 400,
+      "CauseOfDeath": "C43",
+      "CauseOfDeath_ICDedition": 10
 }]
