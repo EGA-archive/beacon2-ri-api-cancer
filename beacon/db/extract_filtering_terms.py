@@ -63,7 +63,7 @@ def get_filtering_terms(collection:str):
 
 def get_filtering_object(dict_terms: dict, c_name: str):
     terms=[]
-    alphanumeric_fields=['AgeOfOnset', 'DateOfBirth.DayOfBirth', 'DateOfBirth.MonthOfBirth', 'DateOfBirth.YearOfBirth', 'Sex', 'TumourIdentificationCode', 'GeographicResidence', 'IncidenceDate.IncidenceDay', 'IncidenceDate.IncidenceMonth', 'IncidenceDate.IncidenceYear', 'BasisOfDiagnosis', 'TumourMorphology', 'TumourBehaviour', 'TumourGrade', 'TumourLaterality', 'PrimaryTreatment.Surgery', 'PrimaryTreatment.Radiotherapy', 'PrimaryTreatment.Chemotherapy', 'PrimaryTreatment.TargetedTherapy', 'PrimaryTreatment.Immunotherapy', 'PrimaryTreatment.HormoneTherapy', 'PrimaryTreatment.Other', 'PrimaryTreatment.StemCellTransplantation', 'DateOfRecurrence.DayOfRecurrence', 'DateOfRecurrence.MonthOfRecurrence', 'DateOfRecurrence.YearOfRecurrence', 'VitalStatus', 'VitalStatusDate.DayVitalStatus', 'VitalStatusDate.MonthVitalStatus', 'VitalStatusDate.YearVitalStatus', 'SurvivalDuration', 'CauseOfDeath_ICDedition']
+    #alphanumeric_fields=['AgeOfOnset', 'DateOfBirth.DayOfBirth', 'DateOfBirth.MonthOfBirth', 'DateOfBirth.YearOfBirth', 'Sex', 'TumourIdentificationCode', 'GeographicResidence', 'IncidenceDate.IncidenceDay', 'IncidenceDate.IncidenceMonth', 'IncidenceDate.IncidenceYear', 'BasisOfDiagnosis', 'TumourMorphology', 'TumourBehaviour', 'TumourGrade', 'TumourLaterality', 'PrimaryTreatment.Surgery', 'PrimaryTreatment.Radiotherapy', 'PrimaryTreatment.Chemotherapy', 'PrimaryTreatment.TargetedTherapy', 'PrimaryTreatment.Immunotherapy', 'PrimaryTreatment.HormoneTherapy', 'PrimaryTreatment.Other', 'PrimaryTreatment.StemCellTransplantation', 'DateOfRecurrence.DayOfRecurrence', 'DateOfRecurrence.MonthOfRecurrence', 'DateOfRecurrence.YearOfRecurrence', 'VitalStatus', 'VitalStatusDate.DayVitalStatus', 'VitalStatusDate.MonthVitalStatus', 'VitalStatusDate.YearVitalStatus', 'SurvivalDuration', 'CauseOfDeath_ICDedition']
     type=''
     try:
         
@@ -76,48 +76,25 @@ def get_filtering_object(dict_terms: dict, c_name: str):
                             label = v3
                             if field is not None:
                                 if label is not None:
-                                    if field not in alphanumeric_fields:
-                                        if '_id' not in field:
-                                            terms.append({
-                                                            'type': 'custom',
-                                                            'id': '{}:{}'.format(field,label),
-                                                            'scope': c_name                   
-                                                        })
-                                    else:
+                                    if '_id' not in field:
                                         type='alphanumeric'
                                         terms.append({
                                                             'type': type,
                                                             'id': field,
                                                             'scope': c_name                    
                                                         })
-                                        terms.append({
-                                                            'type': 'custom',
-                                                            'id': '{}:{}'.format(field,label),
-                                                            'scope': c_name                   
-                                                        })
+
                     else:
                         field = k + '.' + k2
                         label = v2
                         if field is not None:
                             if label is not None:
-                                if field not in alphanumeric_fields:
-                                    if '_id' not in field:
-                                        terms.append({
-                                                            'type': 'custom',
-                                                            'id': '{}:{}'.format(field,label),
-                                                            'scope': c_name                   
-                                                        })
-                                else:
+                                if '_id' not in field:
                                     type='alphanumeric'
                                     terms.append({
                                                             'type': type,
                                                             'id': field,
                                                             'scope': c_name                    
-                                                        })
-                                    terms.append({
-                                                            'type': 'custom',
-                                                            'id': '{}:{}'.format(field,label),
-                                                            'scope': c_name                   
                                                         })
             elif isinstance(v, list):
                 for item in v:
@@ -125,24 +102,12 @@ def get_filtering_object(dict_terms: dict, c_name: str):
                     label = item
                     if field is not None:
                         if label is not None:
-                            if field not in alphanumeric_fields:
-                                if '_id' not in field:
-                                    terms.append({
-                                                            'type': 'custom',
-                                                            'id': '{}:{}'.format(field,label),
-                                                            'scope': c_name                   
-                                                        })
-                            else:
+                            if '_id' not in field:
                                 type='alphanumeric'
                                 terms.append({
                                                             'type': type,
                                                             'id': field,
                                                             'scope': c_name                    
-                                                        })
-                                terms.append({
-                                                            'type': 'custom',
-                                                            'id': '{}:{}'.format(field,label),
-                                                            'scope': c_name                   
                                                         })
             else:
                 field = k
@@ -150,24 +115,12 @@ def get_filtering_object(dict_terms: dict, c_name: str):
 
                 if field is not None:
                     if label is not None:
-                        if field not in alphanumeric_fields:
                             if '_id' not in field:
+                                type='alphanumeric'
                                 terms.append({
-                                                            'type': 'custom',
-                                                            'id': '{}:{}'.format(field,label),
-                                                            'scope': c_name                   
-                                                        })
-                        else:
-                            type='alphanumeric'
-                            terms.append({
                                                             'type': type,
                                                             'id': field,
                                                             'scope': c_name                    
-                                                        })
-                            terms.append({
-                                                            'type': 'custom',
-                                                            'id': '{}:{}'.format(field,label),
-                                                            'scope': c_name                   
                                                         })
 
             print(terms)

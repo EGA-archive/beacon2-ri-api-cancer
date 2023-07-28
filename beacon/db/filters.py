@@ -277,7 +277,7 @@ def format_operator(operator: Operator) -> str:
 
 def apply_alphanumeric_filter(query: dict, filter: AlphanumericFilter, collection: str) -> dict:
     LOG.debug(filter.value)
-    alphanumeric_fields=['ProvinceCode', 'id', 'TopographyLocation', 'CauseOfDeath', 'CauseOfDeathCode', 'TTNM', 'NTNM', 'MTNM', 'TNMStage']
+    alphanumeric_fields=['PatientID', 'TumourTopography']
     if filter.id in alphanumeric_fields:
         formatted_value = str(filter.value)
     else:

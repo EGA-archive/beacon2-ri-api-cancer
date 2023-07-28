@@ -294,10 +294,7 @@ function FilteringTerms(props) {
                             <th className="search-box sorting" tabIndex="0" aria-controls="DataTables_Table_0" rowSpan="1" colSpan="2" aria-sort="ascending" aria-label=": activate to sort column descending"><form><input className="searchTermInput1" type="search" value={state.query} onChange={handleChange} placeholder="Search term" /></form></th>
 
                         </tr>
-                        <tr className="search-tr">
-                            <th className="search-box sorting" tabIndex="0" aria-controls="DataTables_Table_0" rowSpan="1" colSpan="2" aria-sort="ascending" aria-label=": activate to sort column descending"><form><input className="searchTermInput" type="search" value={state.query2} onChange={handleChange2} placeholder="Search label" /></form></th>
 
-                        </tr>
                         <tr className="search-tr">
                             <th className="search-box sorting" tabIndex="0" aria-controls="DataTables_Table_0" rowSpan="1" colSpan="2" aria-sort="ascending" aria-label=": activate to sort column descending"><form><input className="searchTermInput" type="search" value={state.query3} onChange={handleChange3} placeholder="Search by type" /></form></th>
 
@@ -306,7 +303,6 @@ function FilteringTerms(props) {
                     <thead className="thead2">
                         <tr>
                             <th className="th4">term</th>
-                            <th className="th5">label</th>
                             <th className="th6">type</th>
                         </tr>
                     </thead>
@@ -319,13 +315,11 @@ function FilteringTerms(props) {
                                 {index % 2 === 0 && <tr className="terms1">
                                     <td className="th2"> {(term.type=== "ontology" || term.type === "custom") && <input className="select-checkbox" onClick={handleCheck} type="checkbox" id='includeTerm' name="term" value={term.id} />}
                                         {term.id}</td>
-                                    {term.label !== '' ? <td className="th1">{term.label}</td> : <td className="th1">-</td>}
                                     <td className="th1">{term.type}</td>
                                 </tr>}
                                 {index % 2 == !0 && <tr className="terms2">
                                     <td className="th2"> {(term.type=== "ontology" || term.type === "custom") &&  <input className="select-checkbox" onClick={handleCheck} type="checkbox" id="includeTerm" name="term" value={term.id} />}
                                         {term.id}</td>
-                                    {term.label !== '' ? <td className="th1">{term.label}</td> : <td className="th1">-</td>}
                                     <td className="th1">{term.type}</td>
                         
                                 </tr>}

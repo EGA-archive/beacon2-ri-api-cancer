@@ -1,67 +1,68 @@
 
 import './TableResultsIndividuals.css'
 import * as React from 'react';
-import { DataGrid, GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
+import { DataGrid, GridColDef } from '@mui/x-data-grid';
 
 function TableResultsIndividuals(props) {
 
     const columns = [
-        { field: 'id', headerName: 'Row', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'PatientID', headerName: 'PatientID', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'AgeOfOnset', headerName: 'AgeOfOnset', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'DateOfBirth_DayOfBirth', headerName: 'DateOfBirth_DayOfBirth', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'DateOfBirth_MonthOfBirth', headerName: 'DateOfBirth_MonthOfBirth', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'DateOfBirth_YearOfBirth', headerName: 'DateOfBirth_YearOfBirth', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'Sex', headerName: 'Sex', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'TumourIdentificationCode', headerName: 'TumourIdentificationCode', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'GeographicResidence', headerName: 'GeographicResidence', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'HospitalOfDiagnosis', headerName: 'HospitalOfDiagnosis', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'IncidenceDate_IncidenceDay', headerName: 'IncidenceDate_IncidenceDay', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'IncidenceDate_IncidenceMonth', headerName: 'IncidenceDate_IncidenceMonth', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'IncidenceDate_IncidenceYear', headerName: 'IncidenceDate_IncidenceYear', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'BasisOfDiagnosis', headerName: 'BasisOfDiagnosis', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'TumourTopography', headerName: 'TumourTopography', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'TumourMorphology', headerName: 'TumourMorphology', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'TumourBehaviour', headerName: 'TumourBehaviour', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'TumourGrade', headerName: 'TumourGrade', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'TumourLaterality', headerName: 'TumourLaterality', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'PrognosticTumourFactors', headerName: 'PrognosticTumourFactors', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'TumourStage_TnmFinding_Clinical_T_category', headerName: 'TumourStage_TnmFinding_Clinical_T_category', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'TumourStage_TnmFinding_Clinical_N_category', headerName: 'TumourStage_TnmFinding_Clinical_N_category', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'TumourStage_TnmFinding_Pathological_M_category', headerName: 'TumourStage_TnmFinding_Pathological_M_category', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'TumourStage_TnmFinding_Pathological_T_category', headerName: 'TumourStage_TnmFinding_Pathological_T_category', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'TumourStage_TnmFinding_Pathological_N_category', headerName: 'TumourStage_TnmFinding_Pathological_N_category', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'TumourStage_TnmFinding_Pathological_M_category', headerName: 'TumourStage_TnmFinding_Pathological_M_category', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'TumourStage_TnmFinding_TnmEdition', headerName: 'AgeTumourStage_TnmFinding_TnmEditionOfOnset', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'TumourStage_TorontoChildhoodCancerStage_Tier1', headerName: 'TumourStage_TorontoChildhoodCancerStage_Tier1', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'TumourStage_TorontoChildhoodCancerStage_Tier2', headerName: 'TumourStage_TorontoChildhoodCancerStage_Tier2', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'TumourStage_EssentialTnmStage', headerName: 'TumourStage_EssentialTnmStage', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'TumourStage_AnnArborStagingSystem', headerName: 'TumourStage_AnnArborStagingSystem', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'TumourStage_LuganoStagingSystem', headerName: 'TumourStage_LuganoStagingSystem', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'TumourStage_DukesStage', headerName: 'TumourStage_DukesStage', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'TumourStage_SummaryExtentOfDisease', headerName: 'TumourStage_SummaryExtentOfDisease', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'TumourStage_FigoStage', headerName: 'TumourStage_FigoStage', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'PrimaryTreatment_Surgery', headerName: 'PrimaryTreatment_Surgery', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'PrimaryTreatment_Chemotherapy', headerName: 'PrimaryTreatment_Chemotherapy', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'PrimaryTreatment_HormoneTherapy', headerName: 'PrimaryTreatment_HormoneTherapy', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'PrimaryTreatment_Immunotherapy', headerName: 'PrimaryTreatment_Immunotherapy', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'PrimaryTreatment_Other', headerName: 'PrimaryTreatment_Other', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'PrimaryTreatment_Radiotherapy', headerName: 'PrimaryTreatment_Radiotherapy', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'PrimaryTreatment_StemCellTransplantation', headerName: 'PrimaryTreatment_StemCellTransplantation', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'PrimaryTreatment_TargetedTherapy', headerName: 'PrimaryTreatment_TargetedTherapy', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'HospitalOfTreatment', headerName: 'HospitalOfTreatment', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'DateOfRecurrence_DayOfRecurrence', headerName: 'DateOfRecurrence_DayOfRecurrence', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'DateOfRecurrence_MonthOfRecurrence', headerName: 'DateOfRecurrence_MonthOfRecurrence', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'DateOfRecurrence_YearOfRecurrence', headerName: 'DateOfRecurrence_YearOfRecurrence', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'SiteOfRecurrence', headerName: 'AgeOfOnset', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'VitalStatus', headerName: 'PrimaryTreatment_Radiotherapy', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'VitalStatusDate_DayVitalStatus', headerName: 'PrimaryTreatment_StemCellTransplantation', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'VitalStatusDate_MonthVitalStatus', headerName: 'PrimaryTreatment_TargetedTherapy', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'VitalStatusDate_YearVitalStatus', headerName: 'HospitalOfTreatment', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'SurvivalDuration', headerName: 'DateOfRecurrence_DayOfRecurrence', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'CauseOfDeath', headerName: 'DateOfRecurrence_MonthOfRecurrence', width: 100, headerClassName: 'super-app-theme--header' },
-        { field: 'CauseOfDeath_ICDedition', headerName: 'DateOfRecurrence_YearOfRecurrence', width: 100, headerClassName: 'super-app-theme--header' }
+        { field: 'id', headerName: 'Row', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'PatientID', headerName: 'PatientID', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'AgeOfOnset', headerName: 'AgeOfOnset', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'DateOfBirth_DayOfBirth', headerName: 'DateOfBirth_DayOfBirth', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'DateOfBirth_MonthOfBirth', headerName: 'DateOfBirth_MonthOfBirth', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'DateOfBirth_YearOfBirth', headerName: 'DateOfBirth_YearOfBirth', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'Sex', headerName: 'Sex', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourIdentificationCode', headerName: 'TumourIdentificationCode', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'GeographicResidence', headerName: 'GeographicResidence', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'HospitalOfDiagnosis', headerName: 'HospitalOfDiagnosis', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'IncidenceDate_IncidenceDay', headerName: 'IncidenceDate_IncidenceDay', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'IncidenceDate_IncidenceMonth', headerName: 'IncidenceDate_IncidenceMonth', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'IncidenceDate_IncidenceYear', headerName: 'IncidenceDate_IncidenceYear', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'BasisOfDiagnosis', headerName: 'BasisOfDiagnosis', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourTopography', headerName: 'TumourTopography', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourMorphology', headerName: 'TumourMorphology', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourBehaviour', headerName: 'TumourBehaviour', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourGrade', headerName: 'TumourGrade', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourLaterality', headerName: 'TumourLaterality', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'PrognosticTumourFactors', headerName: 'PrognosticTumourFactors', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourStage_TnmFinding_Clinical_T_category', headerName: 'TumourStage_TnmFinding_Clinical_T_category', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourStage_TnmFinding_Clinical_N_category', headerName: 'TumourStage_TnmFinding_Clinical_N_category', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourStage_TnmFinding_Pathological_M_category', headerName: 'TumourStage_TnmFinding_Pathological_M_category', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourStage_TnmFinding_Pathological_T_category', headerName: 'TumourStage_TnmFinding_Pathological_T_category', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourStage_TnmFinding_Pathological_N_category', headerName: 'TumourStage_TnmFinding_Pathological_N_category', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourStage_TnmFinding_Pathological_M_category', headerName: 'TumourStage_TnmFinding_Pathological_M_category', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourStage_TnmFinding_TnmEdition', headerName: 'AgeTumourStage_TnmFinding_TnmEditionOfOnset', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourStage_TorontoChildhoodCancerStage_Tier1', headerName: 'TumourStage_TorontoChildhoodCancerStage_Tier1', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourStage_TorontoChildhoodCancerStage_Tier2', headerName: 'TumourStage_TorontoChildhoodCancerStage_Tier2', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourStage_EssentialTnmStage', headerName: 'TumourStage_EssentialTnmStage', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourStage_AnnArborStagingSystem', headerName: 'TumourStage_AnnArborStagingSystem', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourStage_LuganoStagingSystem', headerName: 'TumourStage_LuganoStagingSystem', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourStage_DukesStage', headerName: 'TumourStage_DukesStage', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourStage_SummaryExtentOfDisease', headerName: 'TumourStage_SummaryExtentOfDisease', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'TumourStage_FigoStage', headerName: 'TumourStage_FigoStage', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'PrimaryTreatment_Surgery', headerName: 'PrimaryTreatment_Surgery', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'PrimaryTreatment_Chemotherapy', headerName: 'PrimaryTreatment_Chemotherapy', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'PrimaryTreatment_HormoneTherapy', headerName: 'PrimaryTreatment_HormoneTherapy', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'PrimaryTreatment_Immunotherapy', headerName: 'PrimaryTreatment_Immunotherapy', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'PrimaryTreatment_Other', headerName: 'PrimaryTreatment_Other', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'PrimaryTreatment_Radiotherapy', headerName: 'PrimaryTreatment_Radiotherapy', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'PrimaryTreatment_StemCellTransplantation', headerName: 'PrimaryTreatment_StemCellTransplantation', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'PrimaryTreatment_TargetedTherapy', headerName: 'PrimaryTreatment_TargetedTherapy', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'HospitalOfTreatment', headerName: 'HospitalOfTreatment', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'DateOfRecurrence_DayOfRecurrence', headerName: 'DateOfRecurrence_DayOfRecurrence', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'DateOfRecurrence_MonthOfRecurrence', headerName: 'DateOfRecurrence_MonthOfRecurrence', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'DateOfRecurrence_YearOfRecurrence', headerName: 'DateOfRecurrence_YearOfRecurrence', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'SiteOfRecurrence', headerName: 'AgeOfOnset', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'VitalStatus', headerName: 'PrimaryTreatment_Radiotherapy', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'VitalStatusDate_DayVitalStatus', headerName: 'PrimaryTreatment_StemCellTransplantation', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'VitalStatusDate_MonthVitalStatus', headerName: 'PrimaryTreatment_TargetedTherapy', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'VitalStatusDate_YearVitalStatus', headerName: 'HospitalOfTreatment', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'SurvivalDuration', headerName: 'DateOfRecurrence_DayOfRecurrence', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'CauseOfDeath', headerName: 'DateOfRecurrence_MonthOfRecurrence', flex: 1, headerClassName: 'super-app-theme--header' },
+        { field: 'CauseOfDeath_ICDedition', headerName: 'DateOfRecurrence_YearOfRecurrence', flex: 1, headerClassName: 'super-app-theme--header' }
     ]
+
     console.log(props.results)
     const rows = []
     const ids = []
@@ -701,7 +702,7 @@ function TableResultsIndividuals(props) {
 
             if (element[1].VitalStatus !== '' && element[1].VitalStatus !== undefined) {
                 if (element[1].VitalStatus !== undefined) {
-                    Morphology= element[1].VitalStatus
+                    VitalStatus= element[1].VitalStatus
                 }
 
                 stringVitalStatus = `${VitalStatus}`
@@ -789,7 +790,6 @@ function TableResultsIndividuals(props) {
                 stringCauseOfDeath_ICDedition = ''
             }
 
-
             rows.push({ id: index, 
                 Beacon: element[0], 
                 PatientID: stringPatientID, 
@@ -854,7 +854,62 @@ function TableResultsIndividuals(props) {
 
 
     return (
-        <DataGrid getRowHeight={() => 'auto'}
+        <DataGrid 
+        initialState={{
+            columns: {
+              columnVisibilityModel: {
+                // Hide columns status and traderName, the other columns will remain visible
+                DateOfBirth_DayOfBirth: false,
+                DateOfBirth_MonthOfBirth: false,
+                DateOfBirth_YearOfBirth: false,
+                HospitalOfDiagnosis: false,
+                IncidenceDate_IncidenceDay: false,
+                IncidenceDate_IncidenceMonth: false,
+                IncidenceDate_IncidenceYear: false,
+                BasisOfDiagnosis: false,
+                TumourLaterality: false,
+                PrognosticTumourFactors: false,
+                TumourStage_TnmFinding_Clinical_T_category: false,
+                TumourStage_TnmFinding_Clinical_N_category: false,
+                TumourStage_TnmFinding_Pathological_M_category: false,
+                TumourStage_TnmFinding_Pathological_T_category: false,
+                TumourStage_TnmFinding_Pathological_N_category: false,
+                TumourStage_TnmFinding_Pathological_M_category: false,
+                TumourStage_TnmFinding_TnmEdition: false,
+                TumourStage_TorontoChildhoodCancerStage_Tier1: false,
+                TumourStage_TorontoChildhoodCancerStage_Tier2: false,
+                TumourStage_EssentialTnmStage: false,
+                TumourStage_AnnArborStagingSystem: false,
+                TumourStage_LuganoStagingSystem: false,
+                TumourStage_DukesStage: false,
+                TumourStage_SummaryExtentOfDisease: false,
+                TumourStage_FigoStage: false,
+                PrimaryTreatment_Surgery: false,
+                PrimaryTreatment_Chemotherapy: false,
+                PrimaryTreatment_HormoneTherapy: false,
+                PrimaryTreatment_Immunotherapy: false,
+                PrimaryTreatment_Other: false,
+                PrimaryTreatment_Radiotherapy: false,
+                PrimaryTreatment_StemCellTransplantation: false,
+                PrimaryTreatment_TargetedTherapy: false,
+                HospitalOfTreatment: false,
+                DateOfRecurrence_DayOfRecurrence: false,
+                DateOfRecurrence_MonthOfRecurrence: false,
+                DateOfRecurrence_YearOfRecurrence: false,
+                SiteOfRecurrence: false,
+                VitalStatus: false,
+                VitalStatusDate_DayVitalStatus: false,
+                VitalStatusDate_MonthVitalStatus: false,
+                VitalStatusDate_YearVitalStatus: false,
+                SurvivalDuration:false,
+                CauseOfDeath:false,
+                CauseOfDeath_ICDedition:false
+                
+              },
+            },
+          }}
+        getRowHeight={() => 'auto'}
+
 
             columns={columns}
             rows={rows}
