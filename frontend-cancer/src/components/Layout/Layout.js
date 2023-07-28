@@ -363,7 +363,7 @@ function Layout(props) {
 
     const handleExQueries = () => {
         if (props.collection === 'Individuals') {
-            setExampleQ(['TumourGrade=3', 'TumourGrade:3'])
+            setExampleQ(['TumourGrade=3', 'TumourIdentificationCode:9'])
         } else if (props.collection === 'Variant') {
             setExampleQ(['22 : 16050310 - 16050740', '22 : 16050074 A > G'])
         }

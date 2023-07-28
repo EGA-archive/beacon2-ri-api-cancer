@@ -11,6 +11,7 @@
     width: 50%;
     display: flex;
     justify-content: flex-start;
+	overflow: hidden;
 }
 .nav3 {
     width: 50%;
@@ -21,7 +22,7 @@
 .nav2 a {
 	line-height: 57px;
 	height: 100%;
-	width: 30%;
+	width: 40%;
 	font-size: 12px;
 	display: inline-block;
 	position: relative;

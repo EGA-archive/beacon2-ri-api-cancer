@@ -368,7 +368,10 @@ def apply_custom_filter(query: dict, filter: CustomFilter, collection:str) -> di
 
     value_splitted = filter.id.split(':')
     query_term = value_splitted[0]
-    query[query_term]=value_splitted[1]
+    try:
+        query[query_term]=int(value_splitted[1])
+    except Exception:
+        query[query_term]=value_splitted[1]
 
 
     LOG.debug("QUERY: %s", query)
