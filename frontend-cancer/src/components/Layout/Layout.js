@@ -194,11 +194,11 @@ function Layout(props) {
                 return arrayFilteringTerms
             } else {
                 if (post !== undefined) {
-                    if (post.toLowerCase().includes(e.target.value.toLowerCase())) {
+                    if (post.toString().toLowerCase().includes(e.target.value.toString().toLowerCase())) {
                         return post
                     }
                 } else {
-                    if (post.toLowerCase().includes(e.target.value.toLowerCase())) {
+                    if (post.toLowerCase().includes(e.target.value.toString().toLowerCase())) {
                         return post
                     }
                 }
