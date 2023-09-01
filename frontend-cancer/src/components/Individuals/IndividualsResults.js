@@ -43,6 +43,8 @@ function IndividualsResults(props) {
 
     const [checked, setChecked] = useState(false)
 
+    const [isLoading, setIsLoading] = useState(false);
+
     const API_ENDPOINT = "http://localhost:5052/api/individuals/"
 
     let queryStringTerm = ''
@@ -158,6 +160,8 @@ function IndividualsResults(props) {
             }
 
             try {
+                
+
             
                 if (props.query === null) {
 
@@ -184,14 +188,17 @@ function IndividualsResults(props) {
 
                     const headers = { 'Content-type': 'application/json', 'Authorization': `Bearer ${token}` }
 
-
+                    
                     //   const headers = { 'Content-type': 'application/json', "Access-Control-Allow-Origin": "*" }
                     //res = await axios.post("https://beacons.bsc.es/beacon-network/v2.0.0/individuals/", jsonData1, { headers: headers })
                     res = await axios.post("http://localhost:5052/api/individuals", jsonData1)
 
                     // res = await axios.post("http://localhost:5050/api/individuals", jsonData1, { headers: headers })
                     console.log(res)
+                    
                     setTimeOut(true)
+
+                    
 
                     if (res.data.responseSummary.numTotalResults < 1) {
                         setError("No results. Please check the query and retry")
@@ -199,6 +206,7 @@ function IndividualsResults(props) {
                         setBoolean(false)
                     }
                     else {
+                        setIsLoading(false)
 
                         res.data.response.resultSets.forEach((element, index) => {
 
@@ -319,7 +327,11 @@ function IndividualsResults(props) {
 
     }
     return (
+
         <div>
+                    {timeOut === false && <div className="spinner-container">
+        <div className="loading-spinner"></div>
+      </div>}
             {logInRequired === false &&
 
                 <div>

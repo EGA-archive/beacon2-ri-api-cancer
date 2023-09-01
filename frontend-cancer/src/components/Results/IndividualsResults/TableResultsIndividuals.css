@@ -45,12 +45,12 @@
     margin-bottom: 10px;
     margin-right: 40px;
     white-space: pre;
-    overflow-y: scroll !important;
-    overflow-x: scroll !important;
+    overflow-y: hidden;
+    overflow-x: hidden;
     height: 50px;
     font-size: 12px;
     text-overflow:clip !important;
-    overflow-inline: scroll;
+    overflow-inline: hidden;
 }
 
 .MuiDataGrid-root{
