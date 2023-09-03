@@ -43,8 +43,6 @@ function IndividualsResults(props) {
 
     const [checked, setChecked] = useState(false)
 
-    const [isLoading, setIsLoading] = useState(false);
-
     const API_ENDPOINT = "http://localhost:5052/api/individuals/"
 
     let queryStringTerm = ''
@@ -206,7 +204,6 @@ function IndividualsResults(props) {
                         setBoolean(false)
                     }
                     else {
-                        setIsLoading(false)
 
                         res.data.response.resultSets.forEach((element, index) => {
 
@@ -329,8 +326,8 @@ function IndividualsResults(props) {
     return (
 
         <div>
-                    {timeOut === false && <div className="spinner-container">
-        <div className="loading-spinner"></div>
+                    {timeOut === false && <div className="contenidorvolta">
+        <div className="volta"></div>
       </div>}
             {logInRequired === false &&
 
