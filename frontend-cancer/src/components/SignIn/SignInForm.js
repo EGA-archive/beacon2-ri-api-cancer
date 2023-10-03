@@ -7,6 +7,7 @@ import { AuthContext } from '../context/AuthContext';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../NavBar/Navbar';
+import configData from '../../config.json'
 
 
 
@@ -61,7 +62,7 @@ export default function SignInForm() {
             formBody = formBody.join("&");
 
 
-            const response = await fetch('http://localhost:8080/auth/realms/Beacon/protocol/openid-connect/token', {
+            const response = await fetch(configData.KEYCLOAK_URL + '/auth/realms/Beacon/protocol/openid-connect/token', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
