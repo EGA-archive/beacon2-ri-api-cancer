@@ -12,7 +12,7 @@ import os
 beacon_id = 'org.ega-archive.ga4gh-approval-beacon-cancer-test'  # ID of the Beacon
 beacon_name = 'GA4GH Approval Beacon Cancer Test'  # Name of the Beacon service
 api_version = 'v2.0.0'  # Version of the Beacon implementation
-uri = 'https://ega-archive.org/test-beacon-apis/cineca/'
+uri = 'http://oriol-1-test.ega-archive.org'
 
 #
 # Beacon granularity
