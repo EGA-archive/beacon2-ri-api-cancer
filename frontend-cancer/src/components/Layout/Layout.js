@@ -16,6 +16,8 @@ import MultiSwitch from 'react-multi-switch-toggle';
 
 import axios from "axios";
 
+import configData from '../../config.json'
+
 import ReactModal from 'react-modal';
 import makeAnimated from 'react-select/animated';
 
@@ -289,7 +291,7 @@ function Layout(props) {
 
             try {
 
-                let res = await axios.get("http://localhost:5052/api/individuals/filtering_terms?skip=0&limit=0")
+                let res = await axios.get(configData.API_URL + "/api/individuals/filtering_terms?skip=0&limit=0")
                 console.log(res)
                 if (res.data.response.filteringTerms !== undefined) {
                     setFilteringTerms(res)
@@ -584,7 +586,7 @@ function Layout(props) {
         const fetchData = async () => {
 
             try {
-                let res = await axios.get("http://localhost:5052/api/individuals/filtering_terms?skip=0&limit=0")
+                let res = await axios.get(configData.API_URL + "/api/individuals/filtering_terms?skip=0&limit=0")
                 if (res !== null) {
                     res.data.response.filteringTerms.forEach(element => {
                         if (element.type !== "custom") {

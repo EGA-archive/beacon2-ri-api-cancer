@@ -4,8 +4,6 @@ networks:
   beacon-priv:
   idp-priv:
   pub:
-  my-app-network:
-    external: true
 
 services:
 
@@ -27,7 +25,6 @@ services:
       - ./mongo-init/:/docker-entrypoint-initdb.d/:ro
     networks:
       - beacon-priv
-      - my-app-network
 
 
   mongo-express-cancer:
@@ -59,12 +56,11 @@ services:
       - ./logger.yml:/beacon/beacon/logger.yml
       - ./ontologies:/beacon/ontologies
     ports:
-      - "5052:5050"
+      - "28744:5050"
     networks:
       - beacon-priv
       - pub
       - idp-priv
-      - my-app-network
     working_dir: '/beacon'
     entrypoint: ['python','-m','beacon']
     # entrypoint: ['/bin/sleep','100000000']
@@ -86,7 +82,6 @@ services:
       - beacon-priv
       - pub
       - idp-priv
-      - my-app-network
     #entrypoint: ['/bin/sleep','100000000']
     working_dir: '/beacon'
     entrypoint: ['python','-m', 'permissions']
@@ -94,12 +89,11 @@ services:
   frontend-cancer:
     build:
       context: ../frontend-cancer
-    command: ["node", "/opt/yarn-v1.22.19/bin/yarn.js", "start"]
+    command: ["yarn"]
+    #command: ["node", "/opt/yarn-v1.22.19/bin/yarn.js", "start"]
     container_name: react-cancer
-    depends_on:
-      - beacon-cancer
     ports:
-      - 3003:3001
+      - 28744:3001
     volumes:
       - ../frontend-cancer:/usr/src/app
 
