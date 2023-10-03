@@ -56,7 +56,7 @@ services:
       - ./logger.yml:/beacon/beacon/logger.yml
       - ./ontologies:/beacon/ontologies
     ports:
-      - "28744:5050"
+      - "28743:5050"
     networks:
       - beacon-priv
       - pub
