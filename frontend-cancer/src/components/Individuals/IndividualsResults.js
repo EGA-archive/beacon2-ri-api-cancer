@@ -333,7 +333,7 @@ function IndividualsResults(props) {
                     {timeOut === false && <div className="contenidorvolta">
         <div className="volta"></div>
       </div>}
-            {logInRequired === false &&
+            {logInRequired === true &&
 
                 <div>
 
@@ -366,7 +366,7 @@ function IndividualsResults(props) {
                         </div>
                     </div >
                 </div>}
-            {logInRequired === true && <h3>{messageLogin}</h3>}
+            
         </div>
 
     )

@@ -1,4 +1,4 @@
 {
-    "API_URL": "https://oriol-1-test.ega-archive.org",
+    "API_URL": "http://localhost:28743",
     "KEYCLOAK_URL": "https://beacon-network-demo2.ega-archive.org"
   }

@@ -102,7 +102,7 @@ def main(path=None):
 
     for route in list(beacon.router.routes()):
         cors.add(route, {
-        "http://localhost:3003":
+        "http://localhost:28744":
             aiohttp_cors.ResourceOptions(allow_credentials=True,
             expose_headers="*",
             allow_methods=("POST", "PATCH", "GET", "OPTIONS"),
