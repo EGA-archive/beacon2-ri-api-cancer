@@ -132,7 +132,7 @@ def main(path=None):
             expose_headers="*",
             allow_methods=("POST", "PATCH", "GET", "OPTIONS"),
             allow_headers=DEFAULT_ALLOW_HEADERS),
-        "https://oriol-2-test.ega-archive.org":
+        "https://beacon-cancer-registry-demo.ega-archive.org":
             aiohttp_cors.ResourceOptions(allow_credentials=True,
             expose_headers="*",
             allow_methods=("POST", "PATCH", "GET", "OPTIONS"),
