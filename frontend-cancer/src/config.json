@@ -1,4 +1,4 @@
 {
-    "API_URL": "http://localhost:28743",
+    "API_URL": "https://beacon-cancer-registry-api.ega-archive.org",
     "KEYCLOAK_URL": "https://beacon-network-demo2.ega-archive.org"
   }
